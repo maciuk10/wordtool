@@ -2,7 +2,7 @@
 
 require '../vendor/autoload.php';
 
-define('START_URL', 'http://localhost/wordtool');
+define('START_URL', 'http://'.$_SERVER['SERVER_NAME'].'/wordtool');
 define('SUCCESS_ICON', 'pe-7s-smile');
 define('SUCCESS_TEXT', 'Dziękujemy za wsparcie!!! Dzięki Tobie WordTool będzie jeszcze lepszy :)');
 define('FAILURE_ICON', 'pe-7s-shield');

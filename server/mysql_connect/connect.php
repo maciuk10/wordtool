@@ -1,6 +1,6 @@
 <?php
 
-$server = "localhost";
+$server = $_SERVER['SERVER_NAME'];
 $user = "root";
 $pass = "";
 $db = "wordtool";
