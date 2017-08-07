@@ -1,0 +1,1 @@
+ErrorDocument 404 http://localhost/wordtool/server/static/404.html
