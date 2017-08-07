@@ -1,0 +1,629 @@
+html, body {
+    font-size: 100%;
+}
+body {
+    padding-top: 0rem;
+    background-color: maroon !important;
+    font-family: 'Athiti', sans-serif;
+}
+
+input,
+button {
+    outline: none !important;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: rgba(0,0,0,0.4) !important;
+    background-image: none;
+    color: rgb(255, 255, 255);
+}
+
+textarea {
+    resize: none;
+}
+.navbar-transparent {
+    background: transparent;
+}
+.starter-template {
+    padding: 12rem 1.5rem 6rem;
+}
+.no-margin {
+    margin: 0rem;
+    padding: 0rem;
+}
+.container-wth-margin {
+    margin: 0rem;
+    padding: 0rem;
+    height: 30vh;
+}
+
+.welcome-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.page-heading {
+    color: rgb(255,255,255);
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.page-caption {
+    font-size: 1.5rem;
+    color: rgb(255,255,255);
+    text-transform: uppercase;
+    margin-bottom: 0rem;
+}
+
+
+.wt_padding {
+    padding-top: 0.3125rem;
+}
+
+.down-arrow {
+    bottom: 3rem;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.down-arrow a {
+    background: rgba(0,0,0,0.4);
+    border-radius: 0;
+    color: #fff;
+    display: inline-block;
+    height: 2.875rem;
+    outline-style: none !important;
+    position: relative;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    width: 2.875rem;
+    border: 1px solid rgb(255,255,255);
+}
+
+.down-arrow a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+
+.down-arrow-icon {
+    display: block;
+    font-size: 2.875rem;
+}
+
+.description {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #fff;
+}
+.desc-heading {
+    color: #333;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: right;
+}
+.desc-caption {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.slider {
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: 80px;
+}
+
+.btn-custom {
+    margin-top: 0.3125rem;
+    margin-bottom: 0.3125rem;
+    border: 2px solid #333;
+    font-weight: 500;
+    border-radius: 0px;
+}
+.btn-custom:hover {
+    border: 2px solid #333;
+    background-color: rgba(51,51,51, 0.2);
+}
+
+.pe-7s-custom {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+}
+
+.carousel-control {
+    text-shadow: none !important;
+    background: none !important;
+}
+
+.books {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    background: url("../img/photo.png") repeat fixed center center;
+}
+
+.books_header {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: rgb(255,255,255);
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+.search_group {
+    width: 20%;
+}
+
+.search_book {
+    background-color: transparent;
+    border: 3px solid rgb(255,255,255);
+    padding: 20px;
+}
+
+
+.input-custom {
+    margin: 0px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(255,255,255);
+    padding: 5px 0px 5px 25px;
+    color: rgb(255,255,255);
+    font-size: 1.3rem;
+}
+
+.input-custom::placeholder {
+    color: rgb(255,255,255);
+    font-size: 1.3rem;
+}
+
+.input-custom::-ms-input-placeholder {
+    color: rgb(255,255,255);
+    font-size: 1.3rem;
+}
+
+.input-custom:focus {
+    outline: none;
+}
+
+.input-wrapper input[type="text"] {
+    position: relative;
+}
+
+
+.input-wrapper:before {
+    font-family: 'Pe-icon-7-stroke';
+    font-size: 1.1rem;
+    color: rgb(255,255,255);
+    position: relative;
+    content: "\e618";
+    left: 20px;
+}
+
+.books_slider {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.book_img {
+    text-align: center;
+}
+
+.book_img img {
+    width: 200px;
+    height: 280px;
+    margin: auto;
+}
+
+.book_desc {
+    color: rgb(255,255,255);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 30px 0px 30px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.book_publisher p {
+    color: rgb(255,255,255);
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container-slider {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.no_results {
+    text-align: center;
+    padding: 100px;
+    font-size: 50px;
+    color: rgba(0,0,0,0.4);
+    font-weight: 800;
+}
+
+.n-to-s {
+    color: rgb(255,255,255);
+    font-size: 2rem;
+    font-weight: 200;
+    margin: 2rem 0rem;
+}
+
+.btn-book {
+    background-color: transparent;
+    border: 2px solid rgb(255,255,255);
+    color: rgb(255,255,255);
+    font-size: 1.5rem;
+    margin: 15px 0px 50px 0px;
+    padding: 15px;
+    width: 200px;
+    border-radius: 0px;
+    text-transform: uppercase;
+}
+
+.btn-book:hover {
+    border: 2px solid rgb(255,255,255);
+    background-color: rgba(255,255,255,0.2);
+    color: rgb(255,255,255);
+}
+
+.contact {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    background-image: url("../img/london_bridge.jpg");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.contact-desc {
+    color: rgb(255,255,255);
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 15px 0px;
+}
+
+.contact-input {
+    background: rgba(0,0,0,0.3);
+    color: rgb(255,255,255);
+    border: 1px solid #fff;
+    border-radius: 0px;
+    font-size: 1.2rem;
+}
+
+.btn-contact {
+    background: rgba(0,0,0,0.3);
+    color: rgb(255,255,255);
+    border: 1px solid #fff;
+    width: 100%;
+    border-radius: 0px;
+    font-size: 1.2rem;
+}
+
+.btn-contact:hover,
+.btn-contact:focus {
+    background: transparent;
+    color: rgb(255,255,255);
+    border: 1px solid #fff;
+    border-radius: 0px;
+    font-size: 1.2rem;
+}
+
+.contact-input:hover,
+.contact-input:focus {
+    background: transparent;
+    color: rgb(255,255,255);
+    border: 1px solid #fff;
+    border-radius: 0px;
+    font-size: 1.2rem;
+}
+
+.contact-input::placeholder {
+    color: rgb(255,255,255);
+}
+
+.contact-input::-ms-input-placeholder {
+    color: rgb(255,255,255);
+}
+
+.donate {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    width: 100%;
+    background: url("../img/photo.png") repeat fixed center center;
+}
+
+.btn-price {
+    background-color: transparent;
+    border: 2px solid rgb(255,255,255);
+    border-radius: 0px;
+    color: rgb(255,255,255);
+}
+
+.btn-price:first-child,
+.btn-price:last-child {
+    border-radius: 0px;
+    color: rgb(255,255,255);
+}
+
+.btn-price > input {
+    border: 0px;
+    padding: 0px;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+}
+
+.btn-price {
+    margin: 10px;
+}
+
+.btn-price > input::placeholder {
+    color: rgb(255,255,255);
+}
+
+.btn-price > input::-ms-input-placeholder {
+    color: rgb(255,255,255);
+}
+
+.btn-contribute {
+    padding: 10px 16px;
+    font-size: 18px;
+    color: rgb(255,255,255);
+}
+
+.btn-price:hover,
+.btn-price:focus,
+.btn-price:active {
+    background-color: rgba(255,255,255,0.2);
+    border: 2px solid rgb(255,255,255);
+    outline: none;
+    color: rgb(255,255,255);
+}
+
+.footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    background: rgb(15,15,15) repeat fixed center center;
+}
+
+.footer-header {
+    color: rgb(255,255,255);
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.footer-list > li {
+    background-color: transparent;
+    border: none;
+    font-weight: 300;
+}
+
+
+.footer-list > li > a,
+.footer-list > li > a:hover,
+.footer-list > li > a:focus,
+.footer-list > li > a:active {
+    color: rgb(255,255,255);
+    text-decoration: none;
+    outline: none;
+}
+
+.list-group-item-social a {
+    margin-right: 10px;
+    font-size: 4rem;
+    color: rgb(255,255,255);
+}
+
+.list-group-item-social a:last-child {
+    margin-right: 0px;
+}
+
+.fb:hover,
+.fb:focus,
+.fb:active {
+    color: #3B5997;
+}
+
+.tw:hover,
+.tw:focus,
+.tw:active {
+    color: #1DA1F3;
+}
+
+.gplus:hover,
+.gplus:focus,
+.gplus:active {
+    color: #DC493C;
+}
+
+.success {
+    font-size: 8rem;
+    color: rgb(255,255,255);
+    margin-bottom: -40px;
+}
+
+.success-caption {
+    margin-top: 10px;
+    font-size: 2rem;
+    color: rgb(255,255,255);
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1031;
+    display: block;
+}
+
+.loading .gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-loading {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1020;
+    display: none;
+}
+
+.login-loading .gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-loading {
+    position: relative;
+    top: 0;
+    height: 50vh;
+    margin: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1020;
+    display: none;
+}
+
+.form-loading .gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-loading .sending {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: rgb(255,255,255);
+    font-weight: 300;
+    font-size: 1.4rem;
+}
+
+.login-container {
+    display: none;
+}
+
+
+.login-page-header h1 {
+    color: rgb(255,255,255);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.middle-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.login label {
+    color: rgb(255,255,255);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.login input {
+    background: rgba(0,0,0,0.4);
+    border: 2px solid rgb(255,255,255);
+    color: rgb(255,255,255);
+    border-radius: 0px;
+}
+
+.login input:focus,
+.login input:active,
+.login input:hover,
+.login input:visited {
+    background-color: transparent;
+    color: rgb(255,255,255);
+    border: 2px solid rgb(255,255,255);
+    border-radius: 0px;
+    outline: none;
+}
+
+.login input:-webkit-autofill,
+.login input:-webkit-autofill:hover,
+.login input:-webkit-autofill:focus,
+.login input:-webkit-autofill:visited,
+.login input:-webkit-autofill:active {
+    background: rgba(0,0,0,0.4) !important;
+    border: 2px solid rgb(255,255,255) !important;
+    border-radius: 0px;
+    transition: background-color 5000s ease-in-out 0s;
+    color: rgb(255,255,255);
+    -webkit-text-fill-color: rgb(255,255,255) !important;
+}
+
+.login input::placeholder {
+    color: rgb(255,255,255) !important;
+}
+
+.login button {
+    background: rgba(0,0,0,0.4) !important;
+    border-radius: 0px;
+    border: 2px solid rgb(255,255,255);
+    color: rgb(255,255,255) !important;
+    font-size: 1.1rem;
+}
+
+.login button:focus,
+.login button:active,
+.login button:hover,
+.login button:visited {
+    background: transparent !important;
+    color: rgb(255,255,255) !important;
+    border: 2px solid rgb(255,255,255);
+}
+
+.error-form {
+    background: rgba(153,0,0, 0.2);
+    border-radius: 0px;
+    border: 2px solid rgb(153,0,0);
+    color: rgb(255,255,255);
+}
+
+.done-well {
+    background: rgba(0,128,0, 0.2);
+    border-radius: 0px;
+    border: 2px solid rgb(0,128,0);
+    color: rgb(255,255,255);
+    display: none;
+}
