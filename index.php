@@ -26,6 +26,12 @@
 <div class="login-loading">
     <img src="./img/page-loader.svg" class="gif"/>
 </div>
+<div class="signup-loading">
+    <div class="content text-center">
+        <img src="./img/Ellipsis.svg" class="gif"/>
+        <p class="text-center sending">Tworzenie konta. Proszę czekać</p>
+    </div>
+</div>
 <section class="main-page" id="main-page">
 <nav class="navbar navbar-ct-black navbar-fixed-top navbar-transparent" role="navigation">
     <div class="container">
@@ -65,7 +71,9 @@
                         <p>Zaloguj się</p>
                     </a>
                 </li>
-                <li class="dropdown">
+                <?php
+                    if (isset($_SESSION['logged'])){
+                        echo '<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="pe-7s-user"></i>
                         <p>Użytkownik <b class="caret"></b></p>
@@ -78,7 +86,9 @@
                         <li class="divider"></li>
                         <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Wyloguj</a></li>
                     </ul>
-                </li>
+                </li>';
+                    }
+                ?>
             </ul>
             <form class="navbar-form navbar-right navbar-search-form" role="search">
                 <div class="form-group">
@@ -124,22 +134,22 @@
                     </form>
                 </div>
                 <div class="col-md-6 col-xs-12">
-                    <form autocomplete="off">
+                    <form class="register-form" method="post" action="server/login/signup.php" autocomplete="off">
                         <div class="form-group">
                             <label for="name">Imię:</label>
-                            <input type="text" class="form-control" id="name" />
+                            <input type="text" class="form-control" id="firstname_reg" name="firstname_reg" />
                         </div>
                         <div class="form-group">
                             <label for="lastname">Nazwisko:</label>
-                            <input type="text" class="form-control" id="lastname" />
+                            <input type="text" class="form-control" id="lastname_reg" name="lastname_reg" />
                         </div>
                         <div class="form-group">
                             <label for="email_reg">Adres email:</label>
-                            <input type="email" class="form-control" id="email_reg"  />
+                            <input type="email" class="form-control" id="email_reg" name="email_reg"  />
                         </div>
                         <div class="form-group">
                             <label for="password_reg">Hasło:</label>
-                            <input type="password" class="form-control" id="password_reg" autocomplete="new-password" />
+                            <input type="password" class="form-control" id="password_reg" name="password_reg" autocomplete="new-password" />
                         </div>
                         <button type="submit" class="btn btn-default">Utwórz konto</button>
                     </form>

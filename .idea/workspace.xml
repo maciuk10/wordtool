@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="083b46a2-e8e6-4a4f-adb3-c144c7aaa09f" name="Default" comment="" />
+    <list default="true" id="083b46a2-e8e6-4a4f-adb3-c144c7aaa09f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/animat-checkmark-color.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/animat-checkmark.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/source.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tick.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tick_transparent.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tick_white.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tick_white2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/Ellipsis.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/login/signup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/static.js" afterPath="$PROJECT_DIR$/js/static.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/login/login.php" afterPath="$PROJECT_DIR$/server/login/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/static/404.html" afterPath="$PROJECT_DIR$/server/static/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/static/rules.html" afterPath="$PROJECT_DIR$/server/static/rules.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/static/shoppings.html" afterPath="$PROJECT_DIR$/server/static/shoppings.html" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,46 +28,143 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="slick.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/slick.css">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+            <state relative-caret-position="448">
+              <caret line="89" column="21" lean-forward="true" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
+              <folding>
+                <element signature="n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#12736#12759#0#PHP" expanded="true" />
+                <marker date="1502190214395" expanded="true" signature="3200:4195" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="3280:3420" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="3467:4173" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="13521:15191" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="13547:13677" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="13583:13662" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="13703:13979" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="13739:13964" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="14017:15180" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="14118:15165" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="14159:14983" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="14203:14960" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="14286:14933" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="14738:14902" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="15024:15145" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="15346:15694" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="15384:15511" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="15428:15496" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="15549:15683" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="15585:15668" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="16149:16497" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="16187:16314" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="16231:16299" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="16352:16486" ph="..." />
+                <marker date="1502190214395" expanded="true" signature="16388:16471" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/login/signup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="29" column="2" lean-forward="true" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+              <folding>
+                <marker date="1502189284526" expanded="true" signature="203:248" ph="SELECT user_... users" />
+                <marker date="1502189284526" expanded="true" signature="203:255" ph="SELECT user_... users" />
+                <marker date="1502189284526" expanded="true" signature="203:272" ph="SELECT user_... users" />
+                <marker date="1502189284526" expanded="true" signature="427:512" ph="INSERT INTO users... " />
+                <marker date="1502189284526" expanded="true" signature="427:532" ph="INSERT INTO users... " />
+                <marker date="1502189284526" expanded="true" signature="427:570" ph="INSERT INTO users... " />
+                <marker date="1502189284526" expanded="true" signature="427:593" ph="INSERT INTO users... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connect.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/mysql_connect/connect.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slick.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/slick.scss">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2024">
-              <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+            <state relative-caret-position="5000">
+              <caret line="200" column="4" lean-forward="true" selection-start-line="200" selection-start-column="4" selection-end-line="202" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slick-theme.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/slick-theme.less">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+            <state relative-caret-position="425">
+              <caret line="590" column="23" lean-forward="false" selection-start-line="590" selection-start-column="23" selection-end-line="590" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slick-theme.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/slick-theme.css">
+      <file leaf-file-name="static.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/static.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+            <state relative-caret-position="75">
+              <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="404.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/static/404.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="138" column="31" lean-forward="false" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rules.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/static/rules.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shoppings.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/static/shoppings.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="static.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/static.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1205">
+              <caret line="155" column="15" lean-forward="true" selection-start-line="155" selection-start-column="15" selection-end-line="155" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -84,6 +200,9 @@
       <find>local</find>
       <find>sli</find>
       <find>fon</find>
+      <find>welcome</find>
+      <find>loading</find>
+      <find>&lt;p class=&quot;text-center</find>
     </findStrings>
     <replaceStrings>
       <replace>0,0,0,0.4</replace>
@@ -110,6 +229,8 @@
       <command text="git add *" />
       <command text="git commit -m &quot;Font directory in static css&quot;" />
       <command text="git push origin master" />
+      <command text="git add *" />
+      <command text="git commit -m &quot;SignUp Functionality and More 080817&quot;" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -133,21 +254,23 @@
         <option value="$PROJECT_DIR$/server/checkout.php" />
         <option value="$PROJECT_DIR$/server/static/showBooks.php" />
         <option value="$PROJECT_DIR$/css/static.css" />
-        <option value="$PROJECT_DIR$/js/static.js" />
-        <option value="$PROJECT_DIR$/server/static/404.html" />
-        <option value="$PROJECT_DIR$/server/static/rules.html" />
-        <option value="$PROJECT_DIR$/server/static/shoppings.html" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/css/ct-navbar.css" />
         <option value="$PROJECT_DIR$/server/email/send.php" />
-        <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/js/main.js" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/server/start.php" />
         <option value="$PROJECT_DIR$/server/mysql_connect/connect.php" />
         <option value="$PROJECT_DIR$/css/slick-theme.less" />
         <option value="$PROJECT_DIR$/css/slick-theme.scss" />
         <option value="$PROJECT_DIR$/css/slick-theme.css" />
+        <option value="$PROJECT_DIR$/server/login/login.php" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/server/login/signup.php" />
+        <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/js/static.js" />
+        <option value="$PROJECT_DIR$/server/static/404.html" />
+        <option value="$PROJECT_DIR$/server/static/rules.html" />
+        <option value="$PROJECT_DIR$/server/static/shoppings.html" />
       </list>
     </option>
   </component>
@@ -172,10 +295,10 @@
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="43" />
-    <option name="y" value="-10" />
-    <option name="width" value="1378" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -198,70 +321,94 @@
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <expand>
-            <path>
-              <item name="wordtool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordtool" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wordtool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordtool" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wordtool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordtool" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="slick.less" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="wordtool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordtool" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="slick.scss" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="wordtool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordtool" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="slick-theme.less" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="wordtool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordtool" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wordtool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordtool" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="server" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wordtool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordtool" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="server" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="email" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wordtool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordtool" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="server" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wordtool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordtool" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="server" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="mysql_connect" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wordtool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordtool" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="server" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="static" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-          </expand>
-          <select />
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordtool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordtool" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordtool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordtool" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordtool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordtool" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordtool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordtool" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysql_connect" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordtool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordtool" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordtool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordtool" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -299,17 +446,11 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
-      <node-interpreter value="project" />
-      <envs />
+    <configuration default="false" name="index.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/wordtool/index.php">
+      <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
+    <configuration default="false" name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/index.php">
+      <method />
     </configuration>
     <configuration default="true" type="AppEnginePhpConfigurationType" factoryName="App Engine for PHP">
       <method />
@@ -374,6 +515,20 @@
     <configuration default="true" type="docker-deploy" factoryName="Docker Deployment">
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run" />
       <scripts />
@@ -394,10 +549,10 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/index.php" />
-    <configuration default="false" name="index.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/wordtool/index.php">
-      <method />
-    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.php" />
+      <item index="1" class="java.lang.String" itemvalue="PHP Script.index.php" />
+    </list>
     <recent_temporary>
       <list size="1">
         <item index="0" class="java.lang.String" itemvalue="PHP Script.index.php" />
@@ -439,21 +594,21 @@
       <workItem from="1502102422452" duration="9863000" />
       <workItem from="1502121873951" duration="60000" />
       <workItem from="1502122191349" duration="2684000" />
+      <workItem from="1502177108638" duration="11278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172924000" />
+    <option name="totallyTimeSpent" value="184202000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18594436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3280507" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32649842" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -466,11 +621,12 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -506,38 +662,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-          <folding>
-            <element signature="e#12233#12256#0#PHP" expanded="true" />
-            <marker date="1502128167412" expanded="true" signature="13018:14688" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13044:13174" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13080:13159" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13200:13476" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13236:13461" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13514:14677" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13615:14662" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13656:14480" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13700:14457" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13783:14430" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="14235:14399" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="14521:14642" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="14843:15191" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="14881:15008" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="14925:14993" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15046:15180" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15082:15165" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15646:15994" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15684:15811" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15728:15796" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15849:15983" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15885:15968" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/img/1.jpg" />
     <entry file="file://$PROJECT_DIR$/img/2.jpg" />
     <entry file="file://$PROJECT_DIR$/img/4.jpg" />
@@ -561,12 +685,8 @@
     <entry file="file://$PROJECT_DIR$/img/wt_logo_white.png" />
     <entry file="file://$PROJECT_DIR$/img/slide2.png" />
     <entry file="file://$PROJECT_DIR$/img/photo.png" />
-    <entry file="file://$PROJECT_DIR$/js/static.js" />
     <entry file="file://$PROJECT_DIR$/img/page-loader.svg" />
     <entry file="file://$PROJECT_DIR$/.htaccess" />
-    <entry file="file://$PROJECT_DIR$/server/static/rules.html" />
-    <entry file="file://$PROJECT_DIR$/server/static/shoppings.html" />
-    <entry file="file://$PROJECT_DIR$/server/static/404.html" />
     <entry file="file://$PROJECT_DIR$/composer.json" />
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -577,7 +697,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/ct-navbar.css" />
     <entry file="file://$PROJECT_DIR$/js/ct-navbar.js" />
-    <entry file="file://$PROJECT_DIR$/js/main.js" />
     <entry file="file://$PROJECT_DIR$/server/start.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -594,6 +713,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/static/showBooks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/slick.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/slick-theme.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/slick.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2576">
+          <caret line="109" column="22" lean-forward="true" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/slick.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1075">
+          <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/slick.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2200">
+          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/slick-theme.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/slick-theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="56" column="1" lean-forward="false" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/email/send.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -604,134 +784,124 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/login/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="25">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/mysql_connect/connect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
+        <state relative-caret-position="50">
           <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/static/showBooks.php">
+    <entry file="file://$PROJECT_DIR$/server/login/signup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        <state relative-caret-position="525">
+          <caret line="29" column="2" lean-forward="true" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
           <folding>
-            <marker date="1502121811043" expanded="true" signature="143:192" ph="SELECT book_... books" />
-            <marker date="1502121811043" expanded="true" signature="701:714" ph="..." />
-            <marker date="1502121811043" expanded="true" signature="849:862" ph="..." />
+            <marker date="1502189284526" expanded="true" signature="203:248" ph="SELECT user_... users" />
+            <marker date="1502189284526" expanded="true" signature="203:255" ph="SELECT user_... users" />
+            <marker date="1502189284526" expanded="true" signature="203:272" ph="SELECT user_... users" />
+            <marker date="1502189284526" expanded="true" signature="427:512" ph="INSERT INTO users... " />
+            <marker date="1502189284526" expanded="true" signature="427:532" ph="INSERT INTO users... " />
+            <marker date="1502189284526" expanded="true" signature="427:570" ph="INSERT INTO users... " />
+            <marker date="1502189284526" expanded="true" signature="427:593" ph="INSERT INTO users... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="448">
+          <caret line="89" column="21" lean-forward="true" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
           <folding>
-            <element signature="e#12233#12256#0#PHP" expanded="true" />
-            <marker date="1502128167412" expanded="true" signature="13018:14688" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13044:13174" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13080:13159" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13200:13476" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13236:13461" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13514:14677" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13615:14662" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13656:14480" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13700:14457" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="13783:14430" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="14235:14399" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="14521:14642" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="14843:15191" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="14881:15008" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="14925:14993" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15046:15180" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15082:15165" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15646:15994" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15684:15811" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15728:15796" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15849:15983" ph="..." />
-            <marker date="1502128167412" expanded="true" signature="15885:15968" ph="..." />
+            <element signature="n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#12736#12759#0#PHP" expanded="true" />
+            <marker date="1502190214395" expanded="true" signature="3200:4195" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="3280:3420" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="3467:4173" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="13521:15191" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="13547:13677" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="13583:13662" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="13703:13979" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="13739:13964" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="14017:15180" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="14118:15165" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="14159:14983" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="14203:14960" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="14286:14933" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="14738:14902" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="15024:15145" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="15346:15694" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="15384:15511" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="15428:15496" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="15549:15683" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="15585:15668" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="16149:16497" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="16187:16314" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="16231:16299" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="16352:16486" ph="..." />
+            <marker date="1502190214395" expanded="true" signature="16388:16471" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/slick.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="115" column="4" lean-forward="false" selection-start-line="115" selection-start-column="1" selection-end-line="115" selection-end-column="4" />
+        <state relative-caret-position="425">
+          <caret line="590" column="23" lean-forward="false" selection-start-line="590" selection-start-column="23" selection-end-line="590" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/static.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="159" column="21" lean-forward="false" selection-start-line="159" selection-start-column="21" selection-end-line="159" selection-end-column="21" />
+        <state relative-caret-position="1205">
+          <caret line="155" column="15" lean-forward="true" selection-start-line="155" selection-start-column="15" selection-end-line="155" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/slick-theme.scss">
+    <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="5000">
+          <caret line="200" column="4" lean-forward="true" selection-start-line="200" selection-start-column="4" selection-end-line="202" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/slick.js">
+    <entry file="file://$PROJECT_DIR$/js/static.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2576">
-          <caret line="109" column="22" lean-forward="true" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/slick.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+        <state relative-caret-position="75">
+          <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/slick.scss">
+    <entry file="file://$PROJECT_DIR$/server/static/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2024">
-          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        <state relative-caret-position="336">
+          <caret line="138" column="31" lean-forward="false" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/slick-theme.less">
+    <entry file="file://$PROJECT_DIR$/server/static/rules.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        <state relative-caret-position="275">
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/slick-theme.css">
+    <entry file="file://$PROJECT_DIR$/server/static/shoppings.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+        <state relative-caret-position="300">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding />
         </state>
       </provider>

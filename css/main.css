@@ -536,6 +536,29 @@ input::-webkit-inner-spin-button {
     font-size: 1.4rem;
 }
 
+.signup-loading {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1040;
+    display: none;
+}
+
+.signup-loading .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.signup-loading .content p {
+    color: rgb(255,255,255);
+    font-size: 1.7rem;
+    font-weight: 300;
+}
+
 .login-container {
     display: none;
 }
@@ -614,10 +637,10 @@ input::-webkit-inner-spin-button {
 }
 
 .error-form {
-    background: rgba(153,0,0, 0.2);
-    border-radius: 0px;
-    border: 2px solid rgb(153,0,0);
-    color: rgb(255,255,255);
+    background: rgba(153,0,0, 0.2) !important;
+    border-radius: 0px !important;
+    border: 2px solid rgb(153,0,0) !important;
+    color: rgb(255,255,255) !important;
 }
 
 .done-well {

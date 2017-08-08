@@ -7,6 +7,41 @@ $.expr[":"].contains = $.expr.createPseudo(function (arg) {
 
 $(document).ready(function () {
 
+    $('form.register-form').on('submit', function (event) {
+        var data = $(this).serializeArray();
+        $(data).each(function (iterator, field) {
+           if (field.value == ""){
+               $('#'+field.name).addClass('error-form');
+           }else {
+               if($('#'+field.name).hasClass('error-form')){
+                   $('#'+field.name).removeClass('error-form');
+               }
+           }
+        });
+
+        if($(".error-form").length == 0){
+            $.ajax({
+                url: $(this).attr('action'),
+                type: $(this).attr('method'),
+                data: {
+                    data: JSON.stringify(data)
+                },
+                beforeSend: function () {
+                    $('.login-container').fadeOut("slow");
+                    $('.signup-loading').delay(500).fadeIn("slow");
+                },
+                success: function (msg) {
+                    $('.signup-loading .content p').html(msg);
+                    $('.signup-loading').delay(1000).fadeOut("slow");
+                    $('.login-container').delay(1500).fadeIn("slow");
+                    $('input').val("");
+                }
+            });
+        }
+        event.preventDefault();
+    });
+
+
     $('.contact-form').on('submit', function (event) {
         var firstname = $('.firstname').val();
         var lastname = $('.lastname').val();
@@ -64,7 +99,6 @@ $(document).ready(function () {
                 }
             });
         }
-
         event.preventDefault();
     });
 
@@ -76,6 +110,7 @@ $(document).ready(function () {
         event.preventDefault();
         $('.login-loading').fadeIn("slow");
         $('.welcome-container').fadeOut("slow");
+        $('.down-arrow').fadeOut("slow");
         $('.login-container').delay(1000).fadeIn("slow");
         $('.login-loading').fadeOut("slow");
     });
