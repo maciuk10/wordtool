@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="083b46a2-e8e6-4a4f-adb3-c144c7aaa09f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/animat-checkmark-color.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/animat-checkmark.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/source.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tick.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tick_transparent.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tick_white.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tick_white2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/Ellipsis.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/login/signup.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/static.js" afterPath="$PROJECT_DIR$/js/static.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/login/login.php" afterPath="$PROJECT_DIR$/server/login/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/static/404.html" afterPath="$PROJECT_DIR$/server/static/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/static/rules.html" afterPath="$PROJECT_DIR$/server/static/rules.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/static/shoppings.html" afterPath="$PROJECT_DIR$/server/static/shoppings.html" />
-    </list>
+    <list default="true" id="083b46a2-e8e6-4a4f-adb3-c144c7aaa09f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -231,6 +212,12 @@
       <command text="git push origin master" />
       <command text="git add *" />
       <command text="git commit -m &quot;SignUp Functionality and More 080817&quot;" />
+      <command text="git add *" />
+      <command text="git commit -m &quot;SignUp Functionality and More 080817&quot;" />
+      <command text="git config --global user.email &quot;maciekgrzela@outlook.com&quot;" />
+      <command text="git config --global user.name &quot;Maciej&quot;" />
+      <command text="git commit -m &quot;SignUp Functionality and More 080817&quot;" />
+      <command text="git push origin master" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -594,12 +581,12 @@
       <workItem from="1502102422452" duration="9863000" />
       <workItem from="1502121873951" duration="60000" />
       <workItem from="1502122191349" duration="2684000" />
-      <workItem from="1502177108638" duration="11278000" />
+      <workItem from="1502177108638" duration="11424000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184202000" />
+    <option name="totallyTimeSpent" value="184348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
