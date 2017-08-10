@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: maciek
- * Date: 2017-07-26
- * Time: 13:32
- */
 
 include "server/mysql_connect/connect.php";
 
@@ -24,7 +18,10 @@ if($result->num_rows > 0){
         echo "<div class='book_publisher'>";
         echo "<p class='publisher' style='display: none'><span class='bold'>Wydawnictwo: </span>".$row['publisher']."</p>";
         echo "</div>";
-        echo "<button data-book-id='".$row['book_id']."' type='button' class='btn btn-default btn-book'>Zacznij naukę!</button>";
+        echo "<form method='post' action='server/books/book.php'>";
+        echo "<input type='hidden' name='book_id' value='".$row['book_id']."' >";
+        echo "<button type='submit' class='btn btn-default btn-book'>Zacznij naukę!</button>";
+        echo "</form>";
         echo "</div>";
     }
     echo "</div></div></div></div>";
