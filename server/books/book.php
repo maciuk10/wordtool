@@ -24,6 +24,7 @@
     <link href="../../css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
+<input type="hidden" name="bookid" class="bookid" value="<?php echo $_POST['book_id']; ?>">
 <div class="loading">
     <img src="../../img/page-loader.svg" class="gif"/>
 </div>
@@ -79,28 +80,27 @@
             <div class="col-xs-12 container-wth-margins">
                 <ol class="breadcrumb breadcrumb-custom">
                     <li><a href="../../">WordTool</a></li>
-                    <li class="active">DOKOŃCZYĆ</li>
+                    <li class="active data-name"></li>
                 </ol>
             </div>
         </div>
     </div>
 </section>
-<section class="rules">
+<section class="book-info">
     <div class="container">
-        <div class="col-xs-12">
-            <div class="page-header">
-                <h1>Regulamin</h1>
-            </div>
-            <div class="panel panel-default">
+        <div class="row">
+            <div class="panel panel-default panel-card">
                 <div class="panel-body">
-                    <article>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer placerat non nisi ut ultrices. Aliquam et venenatis dolor. Nam hendrerit faucibus enim sollicitudin viverra. Morbi dignissim porttitor consequat. Vestibulum erat dui, facilisis id nibh ac, feugiat auctor nibh. Sed eget interdum dui. Suspendisse vel odio odio. Donec consectetur pharetra elit, eu semper risus fermentum eu. Duis in nibh eu arcu dignissim tristique sit amet nec velit. Etiam rhoncus orci at dui fringilla venenatis. Morbi ac nulla euismod, congue libero et, lacinia nisi. Ut tincidunt egestas dui quis molestie. Sed ut gravida nulla.</p>
-                        <p>Duis nisl lacus, ornare eu molestie euismod, commodo id diam. Nullam suscipit nec velit eget blandit. Maecenas ac facilisis urna. Pellentesque lectus mi, placerat non metus id, luctus ullamcorper enim. Nulla dapibus urna in convallis varius. Suspendisse posuere lobortis elit. Sed libero nisl, sodales at volutpat vel, imperdiet eget odio. In vel turpis nec diam fringilla consectetur. Donec cursus elit sed erat dapibus, vel consectetur arcu sagittis. Fusce pretium nunc a tempor tempus. Vestibulum bibendum quam a lorem cursus vehicula. Vivamus sagittis aliquet odio, eu lacinia lacus ultrices ullamcorper. Nunc eu finibus nulla, ut accumsan neque. Proin vitae sapien eros. Donec nec dolor ac risus convallis suscipit eu et lorem.</p>
-                        <p>Aliquam tincidunt luctus scelerisque. Maecenas enim metus, luctus eu fringilla ac, varius bibendum nulla. Aenean aliquam hendrerit laoreet. Aliquam a arcu aliquam, feugiat diam interdum, suscipit mi. Proin vitae rutrum sapien. Donec venenatis elit ut tincidunt feugiat. Curabitur quam nibh, euismod eget lorem pellentesque, rutrum imperdiet libero. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris ac nisi tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at porta nibh, quis dictum mauris. Aenean viverra nisi felis, sit amet vehicula diam luctus quis. Aenean aliquam fringilla nulla, non posuere sem imperdiet id. Integer sagittis vulputate tellus eget iaculis. Phasellus dolor ante, sollicitudin a quam ut, convallis aliquam magna. Donec dolor quam, placerat in ex et, molestie hendrerit elit.</p>
-                        <p>Nulla semper condimentum blandit. Phasellus convallis vestibulum ligula, ut condimentum nulla commodo a. Mauris ac magna nibh. Morbi eget sagittis lectus. Praesent et eros justo. Sed et erat dignissim ligula euismod varius. Proin dignissim vestibulum dui. Nulla at ullamcorper dolor. Sed at ex semper, sagittis magna id, interdum justo. Vestibulum congue mattis lorem, et tempor quam placerat sed. Maecenas urna tortor, vulputate a aliquam quis, luctus tempor dolor. Vivamus at sagittis velit.</p>
-                        <p>Mauris rhoncus blandit convallis. Aenean mollis ultricies ex vel ultricies. Duis interdum, libero in ultricies tempor, elit turpis efficitur est, id fringilla erat risus finibus dolor. Suspendisse euismod urna risus. Suspendisse quis ante id magna porttitor suscipit nec eget leo. Proin arcu tortor, porttitor a iaculis vel, hendrerit ut erat. Proin sit amet scelerisque nulla.</p>
-                        <p>Donec vitae fringilla magna. Duis eget eleifend nisl, venenatis tristique tortor. Cras commodo quam eu neque semper, a viverra arcu ornare. Nam egestas hendrerit lectus, a bibendum tortor ultricies non. Suspendisse nibh ligula, pellentesque maximus nulla sit amet, condimentum finibus urna. Ut egestas, tortor in congue pellentesque, dolor mauris consectetur risus, et sodales diam lectus sed ex. Donec eget varius elit.</p>
-                    </article>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img class="data-img img-responsive" src="" alt="">
+                        </div>
+                        <div class="col-xs-9">
+                            <p class="data-title"></p>
+                            <p class="data-publisher"></p>
+                            <p class="data-description condensed"></p>
+                        </div>
+                    </div>    
                 </div>
             </div>
         </div>
@@ -149,7 +149,7 @@
 <script>window.jQuery || document.write('<script src="../../js/jquery.js"><\/script>')</script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/ct-navbar.js"></script>
-<script src="../../js/static.js"></script>
+<script src="../../js/book.js"></script>
 <script src="../../js/slick.min.js"></script>
 </body>
 </html>

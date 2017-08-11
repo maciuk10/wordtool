@@ -29,4 +29,6 @@ if($result->num_rows > 0){
     echo "<p class='no_results'>"."Ups. Coś musiało pójść nie tak! Przeładuj stronę"."</p>";
 }
 
+$conn->close();
+
 ?>
