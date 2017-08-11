@@ -15,6 +15,12 @@ $(document).ready(function () {
                 $('.data-title').html(data.name);
                 $('.data-publisher').html(data.publisher);
                 $('.data-description').html(data.description);
+                for(var prop in data){
+                    if(!(data[prop].number === undefined)){
+                        var $html = "<tr><td class='fit'>"+data[prop].number+"</td><td class='fit'>"+data[prop].name+"</td>";
+                        $('.table-responsive .table tbody').html($('.table-responsive .table tbody').html()+$html);
+                    }
+                }
             }
         });
     });

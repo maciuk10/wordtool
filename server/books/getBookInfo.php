@@ -1,6 +1,11 @@
 <?php
     include '../mysql_connect/connect.php';
 
+function array_push_assoc($array, $key, $value){
+    $array[$key] = $value;
+    return $array;
+}
+
     $bookid = $_POST['bookid'];
 
     $data = array('name' => '',
@@ -19,6 +24,17 @@
             }
         }
     }
+
+    $units = array();
+
+    $sql2 = "SELECT unit_no, name FROM units WHERE book_id LIKE ".$bookid;
+    $result2 = $conn->query($sql2);
+    if($result2->num_rows > 0){
+        while($row = $result2->fetch_array()){
+            array_push($units, array('number' => $row[0], 'name' => $row[1]));
+        }
+    }
     $conn->close();
-    echo json_encode($data);
+    $all = array_merge($data, $units);
+    echo json_encode($all);
 ?>

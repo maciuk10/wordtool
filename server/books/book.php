@@ -28,7 +28,7 @@
 <div class="loading">
     <img src="../../img/page-loader.svg" class="gif"/>
 </div>
-<nav class="navbar navbar-ct-black navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-ct-black nav-book" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -74,7 +74,7 @@
         </div>
     </div>
 </nav>
-<section class="directory">
+<section class="directory book-dir">
     <div class="container-fluid container-wth-margins">
         <div class="row container-wth-margins">
             <div class="col-xs-12 container-wth-margins">
@@ -87,26 +87,43 @@
     </div>
 </section>
 <section class="book-info">
-    <div class="container">
-        <div class="row">
-            <div class="panel panel-default panel-card">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <img class="data-img img-responsive" src="" alt="">
-                        </div>
-                        <div class="col-xs-9">
-                            <p class="data-title"></p>
-                            <p class="data-publisher"></p>
-                            <p class="data-description condensed"></p>
-                        </div>
-                    </div>    
+    <div class="container book-container">
+        <div class="row book-row">
+            <div class="col-md-3 col-xs-12 card">
+                <img src="" alt="" class="data-img img-responsive">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-8 col-xs-12 card card-desc">
+                <div class="card-body">
+                    <p class="data-title"></p>
+                    <p class="data-publisher"></p>
+                    <p class="data-description"></p>
+                    <button type="button" class="btn btn-access">Uzyskaj dostęp (5.00zł)</button>
+                </div>
+            </div>
+        </div>
+        <div class="row units-row">
+            <div class="col-xs-12">
+                <p class="text-center text-uppercase text-units">Rozdziały w książce</p>
+            </div>
+            <div class="col-xs-12 data-units">
+                <div class="table-responsive">
+                    <table class="table no-border">
+                        <thead>
+                            <tr>
+                                <th class="fit">Numer rozdziału</th>
+                                <th class="fit">Nazwa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<footer class="footer" id="footer">
+<footer class="footer book-footer" id="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-xs-12">

@@ -2,8 +2,7 @@ html, body {
     font-size: 100%;
 }
 body {
-    padding-top: 86px;
-    background-color: rgb(255,255,255) !important;
+    background: url("../img/photo.png") repeat fixed center center !important;
     font-family: 'Athiti', sans-serif;
 }
 
@@ -160,39 +159,119 @@ textarea {
     transform: translate(-50%, -50%);
 }
 
-.card {
-    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-}
-
-.panel-card {
+.book-container {
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
-.panel-card .panel-body {
-    padding: 0px;
-    background-color: rgb(255,255,255);
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    border-radius: 2px;
+.book-dir {
+    margin-top: -106px;
+    padding-top: 106px;
 }
 
-.data-title {
-    font-size: 2rem;
+.nav-book {
+    background-color: rgba(0,0,0,0.2) !important;
+}
+
+.book-info {
+    width: 100%;
+    background: url("../img/photo.png") repeat fixed center center;
+}
+
+.book-footer {
+    background: rgba(0,0,0,0.4);
+}
+
+.book-row {
+    display: flex;
+    align-items: stretch;
+}
+
+.card {
+    border-radius: 0px;
+    border: 2px solid rgb(255,255,255);
+    padding: 0px;
+}
+
+.data-img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-desc {
+    display: flex;
+    padding: 30px;
+    background: rgba(0,0,0,0.2);
+}
+
+.card-body {
+    align-self: center;
+    color: rgb(255,255,255);
+}
+
+.card-body .data-title {
+    font-size: 1.7rem;
     font-weight: 500;
 }
 
-.data-publisher {
+.card-body .data-publisher {
     text-transform: uppercase;
     font-size: 1.3rem;
+    font-weight: 300;
 }
 
-.data-title::after {
-    content: "";
-    border: 1px solid #999999;
-    width: 100%;
-    display: block;
+.card-body .data-description {
+    text-align: justify;
 }
 
-.condensed {
-    padding-right: 10px;
+.btn-access,
+.btn-access:hover,
+.btn-access:after,
+.btn-access:focus {
+    margin-top: 10px;
+    background-color: rgba(255,255,255,0.1);
+    border: none;
+    border-radius: 0px;
+    color: rgb(255,255,255);
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+.units-row {
+    margin-top: 100px;
+}
+
+.text-units {
+    margin-top: 50px;
+    font-size: 3rem;
+    color: rgb(255,255,255);
+    font-weight: 700;
+}
+
+.table.no-border tr td {
+    border-width: 0;
+}
+
+.table-responsive .table {
+    color: rgb(255,255,255);
+}
+
+.table-responsive .table thead tr th {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.table-responsive .table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+.table-responsive .table tr td {
+    padding: 20px 10px;
+}
+
+.table td.fit,
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
 }
