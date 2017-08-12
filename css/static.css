@@ -170,7 +170,7 @@ textarea {
 }
 
 .nav-book {
-    background-color: rgba(0,0,0,0.2) !important;
+    background-color: rgba(0,0,0,0.4) !important;
 }
 
 .book-info {
@@ -242,36 +242,31 @@ textarea {
 }
 
 .text-units {
-    margin-top: 50px;
     font-size: 3rem;
     color: rgb(255,255,255);
     font-weight: 700;
 }
 
-.table.no-border tr td {
-    border-width: 0;
-}
-
-.table-responsive .table {
+.units {
+    list-style-type: none;
     color: rgb(255,255,255);
 }
 
-.table-responsive .table thead tr th {
+.units li {
+    padding: 5px 0px;
+    font-size: 1.4rem;
+    font-weight: 300;
     text-transform: uppercase;
-    font-weight: 500;
 }
 
-.table-responsive .table {
-    table-layout: fixed;
-    word-wrap: break-word;
-}
-
-.table-responsive .table tr td {
-    padding: 20px 10px;
-}
-
-.table td.fit,
-.table th.fit {
-    white-space: nowrap;
-    width: 1%;
+.units li > span {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 41px;
+    background-color: rgba(0,0,0,0.3);
+    border: 2px solid rgb(255,255,255);
+    color: rgb(255,255,255);
+    text-align: center;
+    margin-right: 20px;
 }

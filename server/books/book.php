@@ -106,19 +106,8 @@
             <div class="col-xs-12">
                 <p class="text-center text-uppercase text-units">Rozdziały w książce</p>
             </div>
-            <div class="col-xs-12 data-units">
-                <div class="table-responsive">
-                    <table class="table no-border">
-                        <thead>
-                            <tr>
-                                <th class="fit">Numer rozdziału</th>
-                                <th class="fit">Nazwa</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="col-xs-12">
+                <ul class="units"></ul>
             </div>
         </div>
     </div>
