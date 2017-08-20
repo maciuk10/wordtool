@@ -1,9 +1,13 @@
 html, body {
     font-size: 100%;
+    line-height: 1rem;
+    word-wrap: break-word;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 body {
     padding-top: 0rem;
-    background-color: maroon !important;
+    background: url("../img/photo.png");
     font-family: 'Athiti', sans-serif;
 }
 
@@ -44,6 +48,7 @@ textarea {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: auto;
 }
 
 .page-heading {
@@ -99,7 +104,7 @@ textarea {
 .description {
     padding-top: 5rem;
     padding-bottom: 5rem;
-    background-color: #fff;
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/debut_light.png");
 }
 .desc-heading {
     color: #333;
@@ -383,7 +388,7 @@ textarea {
 
 .btn-contribute {
     padding: 10px 16px;
-    font-size: 18px;
+    font-size: 1.125rem;
     color: rgb(255,255,255);
 }
 
@@ -400,7 +405,7 @@ textarea {
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
-    background: rgb(15,15,15) repeat fixed center center;
+    background: rgba(0,0,0,0.4);
 }
 
 .footer-header {
@@ -638,15 +643,80 @@ input::-webkit-inner-spin-button {
 
 .error-form {
     background: rgba(153,0,0, 0.2) !important;
-    border-radius: 0px !important;
+    border-radius: 0rem !important;
     border: 2px solid rgb(153,0,0) !important;
     color: rgb(255,255,255) !important;
 }
 
 .done-well {
     background: rgba(0,128,0, 0.2);
-    border-radius: 0px;
+    border-radius: 0rem;
     border: 2px solid rgb(0,128,0);
     color: rgb(255,255,255);
     display: none;
+}
+
+@media only screen and (max-width: 1280px) {
+    html, body {
+        font-size: 87.5%;
+    }
+    .slider {
+        margin-left: 0px;
+    }
+    .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand{
+        margin-left: 0px;
+    }
+    .navbar-right {
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    html, body {
+        font-size: 87.5%;
+    }
+    body {
+        background: blue;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    html, body {
+        font-size: 75%;
+    }
+    body {
+        background: gold;
+    }
+    .container-slider {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    html, body {
+        font-size: 62.5%;
+    }
+    body {
+        background: green;
+    }
+    .page-caption {
+        font-size: 1.7rem;
+    }
+    .desc-caption {
+        font-size: 1.5rem;
+    }
+    .slick-dots {
+        margin-right: -20px !important;
+        margin-left: -20px !important;
+    }
+    .footer-list > li {
+        font-size: 1.4rem;
+    }
+    .input-custom {
+        font-size: 1.6rem;
+    }
+    .input-custom::placeholder {
+        font-size: 1.6rem;
+    }
 }

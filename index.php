@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
@@ -306,7 +306,10 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-price btn-contribute">Wesprzyj!</button>
+                <div class="row">
+                <div class="col-xs-12"><button type="submit" class="btn btn-price btn-contribute">Wesprzyj!</button>          
+</div>
+</div>
                 </div>
             </form>
         </div>
