@@ -106,6 +106,7 @@
             <div class="col-xs-12">
                 <p class="text-center text-uppercase text-units">Rozdziały w książce</p>
             </div>
+<<<<<<< HEAD
             <div class="col-xs-12 data-units">
                 <div class="table-responsive">
                     <table class="table no-border table-hover">
@@ -119,6 +120,10 @@
                         </tbody>
                     </table>
                 </div>
+=======
+            <div class="col-xs-12">
+                <ul class="units"></ul>
+>>>>>>> 9da8866c154b62f124283447046e8df3f8da8cbf
             </div>
         </div>
     </div>

@@ -10,6 +10,7 @@ $(document).ready(function () {
             },
             success: function (msg) {
                 var data = JSON.parse(msg);
+                console.log(data);
                 $('.data-name').html(shorten(data.name));
                 $('.data-img').attr('src', "../../"+data.path);
                 $('.data-title').html(data.name);
@@ -17,8 +18,7 @@ $(document).ready(function () {
                 $('.data-description').html(data.description);
                 for(var prop in data){
                     if(!(data[prop].number === undefined)){
-                        var $html = "<tr><td class='fit'>"+data[prop].number+"</td><td class='fit'>"+data[prop].name+"</td>";
-                        $('.table-responsive .table tbody').html($('.table-responsive .table tbody').html()+$html);
+                        $('ul.units').append("<li><span class='number'>"+data[prop].number+"</span>"+data[prop].name+"</li>");
                     }
                 }
             }
