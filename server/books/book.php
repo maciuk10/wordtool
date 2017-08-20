@@ -108,7 +108,7 @@
             </div>
             <div class="col-xs-12 data-units">
                 <div class="table-responsive">
-                    <table class="table no-border">
+                    <table class="table no-border table-hover">
                         <thead>
                             <tr>
                                 <th class="fit">Numer rozdziału</th>

@@ -249,7 +249,7 @@ textarea {
 }
 
 .table.no-border tr td {
-    border-width: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .table-responsive .table {
@@ -263,15 +263,16 @@ textarea {
 
 .table-responsive .table {
     table-layout: fixed;
-    word-wrap: break-word;
 }
 
 .table-responsive .table tr td {
     padding: 20px 10px;
 }
 
-.table td.fit,
-.table th.fit {
-    white-space: nowrap;
-    width: 1%;
+.table-hover>tbody>tr:hover {
+    background: rgba(0,0,0,0.4);
+}
+
+.rules {
+    background: rgb(255,255,255);
 }
