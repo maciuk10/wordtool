@@ -300,8 +300,8 @@ h1 .subtitle{
 }
 
 .navbar:not(.navbar-transparent).navbar-ct-lowTransparency{
-    background-color: rgba(0, 0, 0, 0.8);
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .dropdown-menu > li > a {
@@ -474,13 +474,13 @@ h1 .subtitle{
 .blurred-container{
     position:relative;
     width:100%;
-    height: 100vh;
+    min-height: 100vh;
     top:0;
     left:0;
 }
 .blurred-container > .img-src{
     width:100%;
-    height:100vh;
+    min-height:100vh;
     padding-top: 101px;
     background-repeat:no-repeat;
     background-size:cover;

@@ -36,19 +36,61 @@
 <nav class="navbar navbar-ct-black navbar-fixed-top navbar-transparent" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand navbar-brand-logo" href="http://www.google.pl">
                 <div class="logo">
-                    <img class="wt_logo" src="./img/wt_logo_white.png" width="200">
+                    <img class="wt_logo" src="./img/wt_logo_white.png">
                 </div>
             </a>
+            <div class="nav-right hidden-sm hidden-md hidden-lg">
+                <ul class="nav navbar-nav navbar-right navbar-ul">
+                    <li>
+                        <a href="#books" data-toggle="search">
+                            <i class="pe-7s-search"></i>
+                            <p class="hidden-xxs">Szukaj książki</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="pe-7s-cart">
+                                <span class="label">0</span>
+                            </i>
+                            <p class="hidden-xxs">Koszyk</p>
+                        </a>
+                    </li>
+                    <li class="login-button">
+                        <a href="!" class="login-btn">
+                            <i class="pe-7s-user">
+                            </i>
+                            <p class="hidden-xxs">Zaloguj się</p>
+                        </a>
+                    </li>
+                    <?php
+                    if (isset($_SESSION['logged'])){
+                        echo '<li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="pe-7s-user"></i>
+                        <p>Użytkownik <b class="caret"></b></p>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Moje dane</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Postęp nauki</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Moje książki</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>  Regulamin</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Wyloguj</a></li>
+                    </ul>
+                </li>';
+                    }
+                    ?>
+                </ul>
+                <form class="navbar-form navbar-right navbar-search-form" role="search">
+                    <div class="form-group">
+                        <input type="text" value="" class="form-control nav-search hidden-xs" placeholder="Szukaj!">
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="nav-right hidden-xs">
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="#books" data-toggle="search" class="hidden-xs">
@@ -102,10 +144,8 @@
     <div class="img-src" style="background-image: url('./img/3.jpg');">
         <div class="container-fluid container-wth-margin welcome-container">
             <h1 class="page-heading text-center">Witaj w WordTool!</h1>
-            <div class="container text-center blurred-div">
-                <p class="page-caption">Witaj w interaktywnym systemie nauki słówek WordTool!</p>
-                <p class="page-caption">Jesteś już zmęczony mozolnym "wkuwaniem" słówek na pamięć?</p>
-                <p class="page-caption">Zacznij się efektywnie i z przyjemnością :) Do dzieła!</p>
+            <div class="container blurred-div">
+                <p class="page-caption">Witaj w interaktywnym systemie nauki słówek WordTool! Jesteś już zmęczony mozolnym "wkuwaniem" słówek na pamięć? Zacznij się efektywnie i z przyjemnością :) <b>Do dzieła!</b></p>
             </div>
         </div>
         <div class="down-arrow down-arrow-floating" aria-hidden="true">
@@ -119,11 +159,16 @@
                     <h1 class="text-center">Ty także możesz stać się częścią WordTool!</h1>
                 </div>
             </div>
+            <div class="row visible-old-generic">
+                <div class="col-xs-12">
+                    <p class="text-center">Logowanie:</p>
+                </div>
+            </div>
             <div class="row login">
                 <div class="col-md-6 col-xs-12">
                     <form autocomplete="off">
                         <div class="form-group">
-                            <label for="email">Adres email:</label>
+                            <label for="email" class="">Adres email:</label>
                             <input type="email" class="form-control" id="email" />
                         </div>
                         <div class="form-group">
@@ -132,6 +177,9 @@
                         </div>
                         <button type="submit" class="btn btn-default">Zaloguj</button>
                     </form>
+                </div>
+                <div class="col-xs-12 visible-old-generic">
+                    <p class="text-center">Rejestracja:</p>
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <form class="register-form" method="post" action="server/login/signup.php" autocomplete="off">
