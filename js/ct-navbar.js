@@ -10,7 +10,7 @@ $(document).ready(function(){
    $('[data-toggle="search"]').click(function(){
         if(searchVisible == 0){
             searchVisible = 1;
-            $(this).parent().addClass('active');
+            $(this).parent().addClass('');
             $(this).children('p').html('Zamknij');
             $('.navbar-search-form').fadeIn(function(){
                 $('.navbar-search-form input').focus();

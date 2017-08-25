@@ -58,7 +58,7 @@
                         </a>
                     </li>
                     <li class="login-button">
-                        <a href="!" class="login-btn">
+                        <a href="#main-page" class="login-btn">
                             <i class="pe-7s-user">
                             </i>
                             <p class="hidden-xxs">Zaloguj się</p>
@@ -343,7 +343,7 @@
             <form class="form-inline" method="post" action="server/checkout.php" autocomplete="off">
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <div class="btn-group btn-group-lg" data-toggle="buttons">
+                        <div class="btn-toggleable" data-toggle="buttons">
                             <button type="button" class="btn btn-price"><input type="radio" name="price" value="15" />15zł</button>
                             <button type="button" class="btn btn-price"><input type="radio" name="price" value="10" />10zł</button>
                             <button type="button" class="btn btn-price"><input type="radio" name="price" value="5" />5zł</button>

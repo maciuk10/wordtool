@@ -164,6 +164,14 @@ textarea {
     background: url("../img/photo.png") repeat fixed center center;
 }
 
+.btn-toggleable > button{
+    font-size: 20px;
+}
+.price-oth {
+    font-size: 20px;
+}
+
+
 .books_header {
     margin-top: 50px;
     margin-bottom: 20px;
@@ -912,7 +920,108 @@ input::-webkit-inner-spin-button {
 and (min-device-width: 320px)
 and (max-device-width: 480px)
 and (-webkit-min-device-pixel-ratio: 2) {
-
+    body {
+        background: url("../img/photo.png");
+    }
+    .navbar .navbar-nav [class^="pe"] {
+        font-size: 25px;
+    }
+    .navbar-form {
+        display: none;
+    }
+    .navbar-nav {
+        height: 50px;
+    }
+    .navbar-nav > li > a {
+        line-height: 50px;
+        padding: 0px;
+        margin: 0px;
+        min-width: 45px;
+    }
+    .navbar-nav > li > a:hover,
+    .navbar-nav > li > a:active,
+    .navbar-nav > li > a:focus,
+    .navbar-nav > li > a:visited {
+        height: 50px;
+        margin: 0px;
+        max-height: 50px;
+        background-color: transparent !important;
+    }
+    .navbar-nav > li > a > i {
+        line-height: 50px;
+    }
+    .wt_logo {
+        margin-top: -7px;
+        width: 120px;
+    }
+    .navbar-brand-logo .logo {
+        width: 120px;
+    }
+    .pe-7s-cart > .label {
+        margin-top: 10px;
+    }
+    .active {
+        background-color: transparent;
+    }
+    .btn-contribute {
+        font-size: 20px;
+    }
+    .contact-desc {
+        font-size: 14px;
+    }
+    .contact-input {
+        margin: 5px 0px;
+    }
+    .contact-input::placeholder {
+        font-size: 14px;
+    }
+    .visible-old-generic {
+        display: block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: rgb(255,255,255);
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+    .visible-old-generic p {
+        font-size: 15px;
+    }
+    .img-src {
+        padding-bottom: 30px;
+    }
+    .login-page-header h1 {
+        font-size: 20px;
+    }
+    .blurred-container > .img-src {
+        padding-top: 40px;
+    }
+    .page-header {
+        margin: 10px 5px;
+        padding: 0px;
+    }
+    .login label {
+        font-size: 13px;
+    }
+    .visible-old-generic {
+        display: block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: rgb(255,255,255);
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+    .visible-old-generic p {
+        font-size: 15px;
+    }
+    .login button {
+        font-size: 15px;
+    }
+    .books_header {
+        margin-top: 0px;
+    }
+    .contact {
+        padding-top: 60px;
+    }
 }
 
 /* Portrait */
