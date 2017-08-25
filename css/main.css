@@ -807,9 +807,9 @@ input::-webkit-inner-spin-button {
 /* Old Generic Android (240x400) */
 
 @media screen
-    and (max-width: 240px)
-    and (max-height: 400px)
-    and (orientation: portrait) {
+and (max-width: 240px)
+and (max-height: 400px)
+and (orientation: portrait) {
     body {
         background: url("../img/photo.png");
     }

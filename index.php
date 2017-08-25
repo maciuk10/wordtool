@@ -33,20 +33,69 @@
     </div>
 </div>
 <section class="main-page" id="main-page">
-<nav class="navbar navbar-ct-black navbar-fixed-top navbar-transparent" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand navbar-brand-logo" href="http://www.google.pl">
-                <div class="logo">
-                    <img class="wt_logo" src="./img/wt_logo_white.png">
+    <nav class="navbar navbar-ct-black navbar-fixed-top navbar-transparent" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-brand-logo" href="http://www.google.pl">
+                    <div class="logo">
+                        <img class="wt_logo" src="./img/wt_logo_white.png">
+                    </div>
+                </a>
+                <div class="nav-right hidden-sm hidden-md hidden-lg">
+                    <ul class="nav navbar-nav navbar-right navbar-ul">
+                        <li>
+                            <a href="#books" data-toggle="search">
+                                <i class="pe-7s-search"></i>
+                                <p class="hidden-xxs">Szukaj książki</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="pe-7s-cart">
+                                    <span class="label">0</span>
+                                </i>
+                                <p class="hidden-xxs">Koszyk</p>
+                            </a>
+                        </li>
+                        <li class="login-button">
+                            <a href="#main-page" class="login-btn">
+                                <i class="pe-7s-user">
+                                </i>
+                                <p class="hidden-xxs">Zaloguj się</p>
+                            </a>
+                        </li>
+                        <?php
+                        if (isset($_SESSION['logged'])){
+                            echo '<li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="pe-7s-user"></i>
+                        <p>Użytkownik <b class="caret"></b></p>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Moje dane</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Postęp nauki</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Moje książki</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>  Regulamin</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Wyloguj</a></li>
+                    </ul>
+                </li>';
+                        }
+                        ?>
+                    </ul>
+                    <form class="navbar-form navbar-right navbar-search-form" role="search">
+                        <div class="form-group">
+                            <input type="text" value="" class="form-control nav-search hidden-xs" placeholder="Szukaj!">
+                        </div>
+                    </form>
                 </div>
-            </a>
-            <div class="nav-right hidden-sm hidden-md hidden-lg">
-                <ul class="nav navbar-nav navbar-right navbar-ul">
+            </div>
+            <div class="nav-right hidden-xs">
+                <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#books" data-toggle="search">
+                        <a href="#books" data-toggle="search" class="hidden-xs">
                             <i class="pe-7s-search"></i>
-                            <p class="hidden-xxs">Szukaj książki</p>
+                            <p>Szukaj książki</p>
                         </a>
                     </li>
                     <li>
@@ -54,14 +103,14 @@
                             <i class="pe-7s-cart">
                                 <span class="label">0</span>
                             </i>
-                            <p class="hidden-xxs">Koszyk</p>
+                            <p>Koszyk</p>
                         </a>
                     </li>
                     <li class="login-button">
-                        <a href="#main-page" class="login-btn">
+                        <a href="!" class="login-btn">
                             <i class="pe-7s-user">
                             </i>
-                            <p class="hidden-xxs">Zaloguj się</p>
+                            <p>Zaloguj się</p>
                         </a>
                     </li>
                     <?php
@@ -85,127 +134,78 @@
                 </ul>
                 <form class="navbar-form navbar-right navbar-search-form" role="search">
                     <div class="form-group">
-                        <input type="text" value="" class="form-control nav-search hidden-xs" placeholder="Szukaj!">
+                        <input type="text" value="" class="form-control nav-search" placeholder="Szukaj!">
                     </div>
                 </form>
             </div>
         </div>
-        <div class="nav-right hidden-xs">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#books" data-toggle="search" class="hidden-xs">
-                        <i class="pe-7s-search"></i>
-                        <p>Szukaj książki</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="pe-7s-cart">
-                            <span class="label">0</span>
-                        </i>
-                        <p>Koszyk</p>
-                    </a>
-                </li>
-                <li class="login-button">
-                    <a href="!" class="login-btn">
-                        <i class="pe-7s-user">
-                        </i>
-                        <p>Zaloguj się</p>
-                    </a>
-                </li>
-                <?php
-                    if (isset($_SESSION['logged'])){
-                        echo '<li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="pe-7s-user"></i>
-                        <p>Użytkownik <b class="caret"></b></p>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Moje dane</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Postęp nauki</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Moje książki</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>  Regulamin</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Wyloguj</a></li>
-                    </ul>
-                </li>';
-                    }
-                ?>
-            </ul>
-            <form class="navbar-form navbar-right navbar-search-form" role="search">
-                <div class="form-group">
-                    <input type="text" value="" class="form-control nav-search" placeholder="Szukaj!">
-                </div>
-            </form>
-        </div>
-    </div>
-</nav>
-<div class="blurred-container">
-    <div class="img-src" style="background-image: url('./img/3.jpg');">
-        <div class="container-fluid container-wth-margin welcome-container">
-            <h1 class="page-heading text-center">Witaj w WordTool!</h1>
-            <div class="container blurred-div">
-                <p class="page-caption">Witaj w interaktywnym systemie nauki słówek WordTool! Jesteś już zmęczony mozolnym "wkuwaniem" słówek na pamięć? Zacznij się efektywnie i z przyjemnością :) <b>Do dzieła!</b></p>
-            </div>
-        </div>
-        <div class="down-arrow down-arrow-floating" aria-hidden="true">
-            <a href="#description">
-                <i class="down-arrow-icon pe-7s-angle-down"></i>
-            </a>
-        </div>
-        <div class="container middle-container login-container">
-            <div class="row">
-                <div class="page-header login-page-header">
-                    <h1 class="text-center">Ty także możesz stać się częścią WordTool!</h1>
+    </nav>
+    <div class="blurred-container">
+        <div class="img-src" style="background-image: url('./img/3.jpg');">
+            <div class="container-fluid container-wth-margin welcome-container">
+                <h1 class="page-heading text-center">Witaj w WordTool!</h1>
+                <div class="container blurred-div">
+                    <p class="page-caption">Witaj w interaktywnym systemie nauki słówek WordTool! Jesteś już zmęczony mozolnym "wkuwaniem" słówek na pamięć? Zacznij się efektywnie i z przyjemnością :) <b>Do dzieła!</b></p>
                 </div>
             </div>
-            <div class="row visible-old-generic">
-                <div class="col-xs-12">
-                    <p class="text-center">Logowanie:</p>
-                </div>
+            <div class="down-arrow down-arrow-floating" aria-hidden="true">
+                <a href="#description">
+                    <i class="down-arrow-icon pe-7s-angle-down"></i>
+                </a>
             </div>
-            <div class="row login">
-                <div class="col-md-6 col-xs-12">
-                    <form autocomplete="off">
-                        <div class="form-group">
-                            <label for="email" class="">Adres email:</label>
-                            <input type="email" class="form-control" id="email" />
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Hasło:</label>
-                            <input type="password" class="form-control" id="password" autocomplete="new-password" />
-                        </div>
-                        <button type="submit" class="btn btn-default">Zaloguj</button>
-                    </form>
+            <div class="container middle-container login-container">
+                <div class="row">
+                    <div class="page-header login-page-header">
+                        <h1 class="text-center">Ty także możesz stać się częścią WordTool!</h1>
+                    </div>
                 </div>
-                <div class="col-xs-12 visible-old-generic">
-                    <p class="text-center">Rejestracja:</p>
+                <div class="row visible-old-generic">
+                    <div class="col-xs-12">
+                        <p class="text-center">Logowanie:</p>
+                    </div>
                 </div>
-                <div class="col-md-6 col-xs-12">
-                    <form class="register-form" method="post" action="server/login/signup.php" autocomplete="off">
-                        <div class="form-group">
-                            <label for="name">Imię:</label>
-                            <input type="text" class="form-control" id="firstname_reg" name="firstname_reg" />
-                        </div>
-                        <div class="form-group">
-                            <label for="lastname">Nazwisko:</label>
-                            <input type="text" class="form-control" id="lastname_reg" name="lastname_reg" />
-                        </div>
-                        <div class="form-group">
-                            <label for="email_reg">Adres email:</label>
-                            <input type="email" class="form-control" id="email_reg" name="email_reg"  />
-                        </div>
-                        <div class="form-group">
-                            <label for="password_reg">Hasło:</label>
-                            <input type="password" class="form-control" id="password_reg" name="password_reg" autocomplete="new-password" />
-                        </div>
-                        <button type="submit" class="btn btn-default">Utwórz konto</button>
-                    </form>
+                <div class="row login">
+                    <div class="col-md-6 col-xs-12">
+                        <form autocomplete="off">
+                            <div class="form-group">
+                                <label for="email" class="">Adres email:</label>
+                                <input type="email" class="form-control" id="email" />
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Hasło:</label>
+                                <input type="password" class="form-control" id="password" autocomplete="new-password" />
+                            </div>
+                            <button type="submit" class="btn btn-default">Zaloguj</button>
+                        </form>
+                    </div>
+                    <div class="col-xs-12 visible-old-generic">
+                        <p class="text-center">Rejestracja:</p>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <form class="register-form" method="post" action="server/login/signup.php" autocomplete="off">
+                            <div class="form-group">
+                                <label for="name">Imię:</label>
+                                <input type="text" class="form-control" id="firstname_reg" name="firstname_reg" />
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Nazwisko:</label>
+                                <input type="text" class="form-control" id="lastname_reg" name="lastname_reg" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email_reg">Adres email:</label>
+                                <input type="email" class="form-control" id="email_reg" name="email_reg"  />
+                            </div>
+                            <div class="form-group">
+                                <label for="password_reg">Hasło:</label>
+                                <input type="password" class="form-control" id="password_reg" name="password_reg" autocomplete="new-password" />
+                            </div>
+                            <button type="submit" class="btn btn-default">Utwórz konto</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </section>
 <section class="description" id="description">
     <div class="container container-custom">
@@ -258,7 +258,7 @@
             </div>
         </div>
         <?php
-            include "server/static/showBooks.php";
+        include "server/static/showBooks.php";
         ?>
     </div>
 </section>
@@ -275,32 +275,32 @@
             </div>
         </div>
         <form action="server/email/send.php" method="post" class="contact-form" autocomplete="off">
-        <div class="form-group row">
-            <div class="col-md-4 col-xs-12">
-                <input type="text" class="form-control contact-input firstname" placeholder="Imię:" name="firstname"/>
+            <div class="form-group row">
+                <div class="col-md-4 col-xs-12">
+                    <input type="text" class="form-control contact-input firstname" placeholder="Imię:" name="firstname"/>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <input type="text" class="form-control contact-input lastname" placeholder="Nazwisko:" name="lastname" />
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <input type="email" class="form-control contact-input email" placeholder="Email:" name="email"/>
+                </div>
             </div>
-            <div class="col-md-4 col-xs-12">
-                <input type="text" class="form-control contact-input lastname" placeholder="Nazwisko:" name="lastname" />
+            <div class="form-group row">
+                <div class="col-xs-12">
+                    <textarea name="msg" class="form-control contact-input msg-textarea" id="msg" rows="7" placeholder="Treść zapytania"></textarea>
+                </div>
             </div>
-            <div class="col-md-4 col-xs-12">
-                <input type="email" class="form-control contact-input email" placeholder="Email:" name="email"/>
+            <div class="form-group row">
+                <div class=" col-md-push-10 col-md-2 col-xs-12">
+                    <button type="submit" class="btn btn-default btn-contact">Wyślij</button>
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-xs-12">
-                <textarea name="msg" class="form-control contact-input msg-textarea" id="msg" rows="7" placeholder="Treść zapytania"></textarea>
+            <div class="form-group row">
+                <div class="col-xs-12">
+                    <div class="well done-well">Wiadomość została wysłana. Wkrótce się z tobą skontaktujemy</div>
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <div class=" col-md-push-10 col-md-2 col-xs-12">
-                <button type="submit" class="btn btn-default btn-contact">Wyślij</button>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-xs-12">
-                <div class="well done-well">Wiadomość została wysłana. Wkrótce się z tobą skontaktujemy</div>
-            </div>
-        </div>
         </form>
     </div>
 </section>
@@ -454,10 +454,10 @@
         (location.host || 'localhost').split(':')[0] +
         ':35729/livereload.js?snipver=1"></' + 'script>')
 </script>
-    <script>window.jQuery || document.write('<script src="./js/jquery.js"><\/script>')</script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/ct-navbar.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/slick.min.js"></script>
+<script>window.jQuery || document.write('<script src="./js/jquery.js"><\/script>')</script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/ct-navbar.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/slick.min.js"></script>
 </body>
 </html>
