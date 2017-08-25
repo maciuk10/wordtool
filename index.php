@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-    <title>WordTool - Interaktywny system nauki słówek</title>
+    <title>WordTool</title>
 
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/pe-icon-7-stroke.css" rel="stylesheet">
@@ -355,7 +355,7 @@
                 </div>
                 <div class="form-group">
                 <div class="row">
-                <div class="col-xs-12"><button type="submit" class="btn btn-price btn-contribute">Wesprzyj!</button>
+                <div class="col-xs-12"><button type="submit" class="btn btn-price btn-contribute">Wesprzyj!</button>          
 </div>
 </div>
                 </div>
