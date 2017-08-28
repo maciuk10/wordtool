@@ -355,7 +355,7 @@
                 </div>
                 <div class="form-group">
                 <div class="row">
-                <div class="col-xs-12"><button type="submit" class="btn btn-price btn-contribute">Wesprzyj!</button>          
+                <div class="col-xs-12"><button type="submit" class="btn btn-price btn-contribute">Wesprzyj!</button>
 </div>
 </div>
                 </div>
