@@ -705,8 +705,54 @@ input::-webkit-inner-spin-button {
     html, body {
         font-size: 87.5%;
     }
-    body {
-        background: blue;
+    .contact-input {
+      margin-bottom: 15px;
+    }
+    .contact-group {
+      margin-bottom: 0;
+    }
+    .footer-list > li > a,
+    .footer-list > li > a:hover,
+    .footer-list > li > a:focus,
+    .footer-list > li > a:active {
+      font-size: 20px;
+    }
+
+    .list-group-item-social a > i {
+        font-size: 40px;
+    }
+
+    .list-group-item-social a:last-child {
+        margin-right: 0;
+    }
+    .visible-old-generic {
+        display: block;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        color: rgb(255,255,255);
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+    .visible-old-generic p {
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+    }
+    .visible-old-generic p::before,
+    .visible-old-generic p::after {
+      content: '';
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: block;
+      flex-grow: 1;
+    }
+    .login-container > .row:first-child {
+      display: none;
+    }
+    .login label {
+      font-size: 15px;
+    }
+    .img-src {
+        padding-bottom: 30px;
     }
 }
 
