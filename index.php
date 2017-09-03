@@ -275,7 +275,7 @@
             </div>
         </div>
         <form action="server/email/send.php" method="post" class="contact-form" autocomplete="off">
-            <div class="form-group row">
+            <div class="form-group row contact-group">
                 <div class="col-md-4 col-xs-12">
                     <input type="text" class="form-control contact-input firstname" placeholder="Imię:" name="firstname"/>
                 </div>
