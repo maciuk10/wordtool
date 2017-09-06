@@ -6,14 +6,9 @@ $.expr[":"].contains = $.expr.createPseudo(function (arg) {
 
 
 $(document).ready(function () {
-    var loginWidth = $('.login-container').width();
-    if (loginWidth >= 940){
-      console.log('Jestem');
-      $('.login-container').addClass('login-middle');
-    }else {
-      $('.login-container').removeClass('login-middle');
-    }
-
+  $('.jump-to-register').on('click', function(){
+    
+  });
     $('form.register-form').on('submit', function (event) {
         var data = $(this).serializeArray();
         $(data).each(function (iterator, field) {
@@ -216,14 +211,5 @@ $(document).ready(function () {
 
     $(window).load(function () {
         $('.loading').fadeOut("slow");
-    });
-    $(window).resize(function () {
-      var loginWidth = $('.login-container').width();
-      if (loginWidth >= 940){
-        console.log('Jestem');
-        $('.login-container').addClass('login-middle');
-      }else {
-        $('.login-container').removeClass('login-middle');
-      }
     });
 });

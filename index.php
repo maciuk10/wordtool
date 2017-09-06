@@ -17,6 +17,7 @@
     <link href="./css/slick.css" rel="stylesheet" type="text/css" />
     <link href="./css/slick-theme.css" rel="stylesheet" type="text/css" />
     <link href="./css/font-awesome.min.css" rel="stylesheet" />
+    <link href="./fonts/ionicons.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -154,55 +155,7 @@
                 </a>
             </div>
             <div class="container middle-container login-container">
-                <div class="row">
-                    <div class="page-header login-page-header">
-                        <h1 class="text-center">Ty także możesz stać się częścią WordTool!</h1>
-                    </div>
-                </div>
-                <div class="row visible-old-generic">
-                    <div class="col-xs-12">
-                        <p class="text-center">Logowanie:</p>
-                    </div>
-                </div>
-                <div class="row login">
-                    <div class="col-md-6 col-xs-12">
-                        <form autocomplete="off">
-                            <div class="form-group">
-                                <label for="email" class="">Adres email:</label>
-                                <input type="email" class="form-control" id="email" />
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Hasło:</label>
-                                <input type="password" class="form-control" id="password" autocomplete="new-password" />
-                            </div>
-                            <button type="submit" class="btn btn-default">Zaloguj</button>
-                        </form>
-                    </div>
-                    <div class="col-xs-12 visible-old-generic">
-                        <p class="text-center">Rejestracja:</p>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <form class="register-form" method="post" action="server/login/signup.php" autocomplete="off">
-                            <div class="form-group">
-                                <label for="name">Imię:</label>
-                                <input type="text" class="form-control" id="firstname_reg" name="firstname_reg" />
-                            </div>
-                            <div class="form-group">
-                                <label for="lastname">Nazwisko:</label>
-                                <input type="text" class="form-control" id="lastname_reg" name="lastname_reg" />
-                            </div>
-                            <div class="form-group">
-                                <label for="email_reg">Adres email:</label>
-                                <input type="email" class="form-control" id="email_reg" name="email_reg"  />
-                            </div>
-                            <div class="form-group">
-                                <label for="password_reg">Hasło:</label>
-                                <input type="password" class="form-control" id="password_reg" name="password_reg" autocomplete="new-password" />
-                            </div>
-                            <button type="submit" class="btn btn-default">Utwórz konto</button>
-                        </form>
-                    </div>
-                </div>
+              <?php include "./server/templates/login.html" ?>
             </div>
         </div>
     </div>
