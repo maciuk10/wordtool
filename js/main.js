@@ -4,11 +4,28 @@ $.expr[":"].contains = $.expr.createPseudo(function (arg) {
     }
 });
 
+var get_file_content = function(filename, divToHide, divToFill){
+  $.ajax({
+    url: './server/templates/'+filename,
+    success: function (data) {
+      $('.login-loading').fadeIn("slow");
+      $('.'+divToHide).fadeOut("slow");
+      $('.login-loading').fadeOut("slow");
+      $('.'+divToFill).fadeOut(0).delay(500).html(data).fadeIn("slow");
+    }
+  });
+}
+
+var triggerLogin = function(){
+  get_file_content('login.html', 'register-photo', 'login-container');
+}
+
+var triggerRegister = function(){
+  get_file_content('register.html', 'login-dark', 'login-container');
+}
+
 
 $(document).ready(function () {
-  $('.jump-to-register').on('click', function(){
-    
-  });
     $('form.register-form').on('submit', function (event) {
         var data = $(this).serializeArray();
         $(data).each(function (iterator, field) {

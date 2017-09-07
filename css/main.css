@@ -578,8 +578,10 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   display: none;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0%;
+  transform: translate(0%, -50%);
+  width: 100%;
+  margin-top: 30px;
 }
 
 .login-page-header h1 {
@@ -822,10 +824,14 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .register-photo form .already {
   display:block;
   text-align:center;
-  font-size:12px;
+  font-size:15px;
   color:#6f7a85;
   opacity:0.9;
   text-decoration:none;
+}
+
+.create-account {
+  font-size: 20px;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -929,9 +935,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     transform: translate(0%, -50%);
     height: auto;
     width: 100%;
-  }
-  .login-dark {
-    width: 500px;
   }
 }
 
