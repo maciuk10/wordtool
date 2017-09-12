@@ -51,6 +51,14 @@
                         <p>Strona Główna</p>
                     </a>
                 </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-cart">
+                            <span class="label">0</span>
+                        </i>
+                        <p class="hidden-xxs">Koszyk</p>
+                    </a>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="pe-7s-user"></i>

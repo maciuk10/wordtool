@@ -679,7 +679,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   max-width: 320px;
   width: 90%;
   background-color: #1e2833;
-  padding: 40px;
+  padding: 5px 40px;
   border-radius: 4px;
   transform: translate(-50%, -50%);
   position: absolute;
@@ -710,7 +710,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   border: none;
   padding: 11px;
   box-shadow: none;
-  margin-top: 26px;
+  margin-top: 0;
   text-shadow: none;
   outline: none;
   font-size: 20px;
@@ -769,13 +769,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   display:table-cell;
   width:400px;
   background-color:#ffffff;
-  padding:40px 60px;
+  padding:20px 60px;
   color:#505e6c;
 }
 
 @media (max-width:991px) {
   .register-photo form {
-    padding:40px;
+    padding:5px;
   }
 }
 
