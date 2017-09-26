@@ -21,6 +21,7 @@
   <input type="hidden" name="bookid" value='<?php echo $_POST["bookid"]; ?>'>
   <input type="hidden" name="bookname" value='<?php echo $_POST["title"]; ?>'>
   <input type="hidden" name="bookpublisher" value='<?php echo $_POST["publisher"]; ?>'>
+  <input type="hidden" name="lastWord" value="">
     <div>
         <nav class="navbar navbar-default navigation-clean-button navbar-fixed-top" style="background-color:rgb(17,2,112);">
             <div class="container">
@@ -157,6 +158,119 @@
 </div>
 
     <!-- Learn finish modal - end -->
+
+
+    <!-- Listen and say modal -->
+    <div id="listenAndSay" class="modal fade" role="dialog">
+<div class="modal-dialog modal-lg">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Krok 2: Ucz się wymowy</h4>
+    </div>
+    <div class="modal-body text-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary btn-listen"><span class="glyphicon glyphicon-play-circle listen" aria-hidden="true"></span>Posłuchaj</button>
+        <button type="button" class="btn btn-primary btn-say"><span class="glyphicon glyphicon-volume-up say" aria-hidden="true"></span>Powiedz</button>
+      </div>
+      <div class="alert alert-success alert-dismissible alert-result" id="myAlert">
+        <a href="#" class="close">&times;</a>
+        <div class="alert-body"></div>
+      </div>
+      <div class="alert alert-info alert-dismissible alert-information" id="myAlert">
+        <a href="#" class="close">&times;</a>
+        <div class="alert-body"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger skipAll" data-dismiss="modal">Pomiń oba kroki dla tego słówka</button>
+      <button type="button" class="btn btn-default gotostep3" data-dismiss="modal" disabled>Krok 3: Powiedz w zdaniu</button>
+      <button type="button" class="btn btn-default skip3" data-dismiss="modal" disabled>Pomiń krok 3: Następne słówko</button>
+    </div>
+  </div>
+
+</div>
+</div>
+    <!-- Listen and say modal - end -->
+
+    <!-- Say at Phrase modal -->
+    <div id="sayAtPhrase" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Krok 3: Powtórz w zdaniu</h4>
+    </div>
+    <div class="modal-body">
+      <p>SayAtPhrase mode</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Następne słówko</button>
+    </div>
+  </div>
+
+</div>
+</div>
+    <!-- Say at Phrase modal - end -->
+    <!-- Cheatsheet modal -->
+    <div id="cheatSheet" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Zapoznaj się ze słówkami z rozdziału</h4>
+    </div>
+    <div class="modal-body">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="./assets/img/age.jpg" alt="Age">
+      <div class="carousel-caption">
+        <h3 class="carousel-bg">Age - wiek</h3>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="./assets/img/date_of_birth.jpg" alt="Date of Birth">
+      <div class="carousel-caption">
+        <h3 class="carousel-bg">Date of Birth - data urodzenia</h3>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="./assets/img/divorced.jpg" alt="Date of Birth">
+      <div class="carousel-caption">
+        <h3 class="carousel-bg">Divorced - rozwiedziony</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" data-dismiss="modal">Jestem gotowy do nauki :)</button>
+    </div>
+  </div>
+
+</div>
+</div>
+    <!-- Cheatsheet modal - end -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>

@@ -7,7 +7,11 @@
 
   $unitid = $_POST['unitid'];
   $bookid = $_POST['bookid'];
-  $sql = "SELECT level, pol, eng FROM words WHERE unit_id=".$unitid." AND book_id=".$bookid."";
+  if(!(isset($_POST['level']))){
+      $sql = "SELECT level, pol, eng FROM words WHERE unit_id=".$unitid." AND book_id=".$bookid."";
+  }else {
+    $sql = "SELECT level, pol, eng FROM words WHERE unit_id=".$unitid." AND book_id=".$bookid." AND level='".$_POST['level']."'";
+  }
   $result = $conn->query($sql);
   if($result->num_rows > 0){
     while($row = $result->fetch_array()){

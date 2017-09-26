@@ -206,3 +206,16 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+.listen,
+.say {
+  font-size: 70px;
+  display: block;
+}
+
+.alert-information,
+.alert-result {
+  display: none;
+}
+.carousel-bg {
+  background: rgba(0,0,0,0.6);
+}
