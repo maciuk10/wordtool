@@ -13,9 +13,12 @@ $(document).ready(function () {
                 console.log(data);
                 $('.data-name').html(shorten(data.name));
                 $('.data-img').attr('src', "../../"+data.path);
-                $('.data-title').html(data.name);
-                $('.data-publisher').html(data.publisher);
+                $('input.data-title').val(data.name);
+                $('p.data-title').html(data.name);
+                $('input.data-publisher').val(data.publisher);
+                $('p.data-publisher').html(data.publisher);
                 $('.data-description').html(data.description);
+                $('input.bookid').val(bookid);
                 for(var prop in data){
                     if(!(data[prop].number === undefined)){
                         $('ul.units').append("<li><span class='number'>"+data[prop].number+"</span>"+data[prop].name+"</li>");

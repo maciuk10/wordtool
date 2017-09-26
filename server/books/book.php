@@ -106,7 +106,14 @@
                     <p class="data-title"></p>
                     <p class="data-publisher"></p>
                     <p class="data-description"></p>
-                    <button type="button" class="btn btn-access">Uzyskaj dostęp (5.00zł)</button>
+                    <form class="form-access" action="../learn/index.php" method="post">
+                        <button type="submit" class="btn btn-access">Uzyskaj dostęp (5.00zł)</button>
+                        <input type="hidden" class="data-title" name="title" value="">
+                        <input type="hidden" class="data-publisher" name="publisher" value="">
+                        <input type="hidden" class="bookid" name="bookid" value="">
+                        <input type="hidden" name="choosen" value="">
+                    </form>
+                    <p class="post-result"></p>
                 </div>
             </div>
         </div>

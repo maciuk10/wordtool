@@ -211,7 +211,7 @@
             </div>
         </div>
         <?php
-        include "server/static/showBooks.php";
+        include "server/templates/showBooks.php";
         ?>
     </div>
 </section>
@@ -383,8 +383,8 @@
                 <ul class="list-group footer-list">
                     <li class="list-group-item"><a href="#main-page" class="login-btn">Logowanie</a></li>
                     <li class="list-group-item"><a href="#main-page" class="login-btn">Rejestracja</a></li>
-                    <li class="list-group-item"><a href="./server/static/shoppings.html">Zakupy</a></li>
-                    <li class="list-group-item"><a href="./server/static/rules.html">Regulamin</a></li>
+                    <li class="list-group-item"><a href="./server/templates/shoppings.html">Zakupy</a></li>
+                    <li class="list-group-item"><a href="./server/templates/rules.html">Regulamin</a></li>
                 </ul>
             </div>
             <div class="col-md-4 col-xs-12">
