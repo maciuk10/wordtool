@@ -216,20 +216,20 @@
 </div>
     <!-- Say at Phrase modal - end -->
     <!-- Cheatsheet modal -->
-    <div id="cheatSheet" class="modal fade" role="dialog">
-<div class="modal-dialog">
+    <div id="cheatSheet" class="modal modal-cheat fade" role="dialog">
+<div class="modal-dialog modal-dialog-cheat">
 
   <!-- Modal content-->
-  <div class="modal-content">
+  <div class="modal-content modal-content-cheat">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal">&times;</button>
       <h4 class="modal-title">Zapoznaj się ze słówkami z rozdziału</h4>
     </div>
-    <div class="modal-body">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="modal-body modal-body-cheat">
+      <div id="myCarousel" class="carousel slide carousel-cheat" data-ride="carousel">
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner">
+  <div class="carousel-inner carousel-inner-cheat">
     <div class="item active">
       <img src="./assets/img/age.jpg" alt="Age">
       <div class="carousel-caption">
@@ -263,7 +263,7 @@
   </a>
 </div>
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer modal-footer-cheat">
       <button type="button" class="btn btn-success" data-dismiss="modal">Jestem gotowy do nauki :)</button>
     </div>
   </div>

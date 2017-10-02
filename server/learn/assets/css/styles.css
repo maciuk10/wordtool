@@ -219,3 +219,40 @@ input:checked + .slider:before {
 .carousel-bg {
   background: rgba(0,0,0,0.6);
 }
+
+.carousel-cheat,
+.carousel-inner-cheat {
+    width: 600px;
+}
+
+.carousel-inner-cheat>.item>a>img, .carousel-inner-cheat>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    width: 600px;
+    height: 450px;
+}
+
+.modal-cheat.in .modal-dialog-cheat {
+    width:100%;
+    margin: 0px;
+    height: 100%;
+}
+
+.modal-content-cheat {
+    height: 100%;
+}
+
+.modal-body-cheat {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-footer-cheat {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#cheatSheet {
+    padding: 0px !important;
+}

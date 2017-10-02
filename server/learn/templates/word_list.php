@@ -1,14 +1,12 @@
 <?php
   include "../../mysql_connect/connect.php";
 
-
   $words = array();
-
 
   $unitid = $_POST['unitid'];
   $bookid = $_POST['bookid'];
   if(!(isset($_POST['level']))){
-      $sql = "SELECT level, pol, eng FROM words WHERE unit_id=".$unitid." AND book_id=".$bookid."";
+      $sql = "SELECT level, pol, eng FROM words WHERE unit_id=".$unitid." AND book_id=".$bookid;
   }else {
     $sql = "SELECT level, pol, eng FROM words WHERE unit_id=".$unitid." AND book_id=".$bookid." AND level='".$_POST['level']."'";
   }

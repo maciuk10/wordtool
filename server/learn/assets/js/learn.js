@@ -102,6 +102,38 @@ var roundAfterComma = function(number, countOfNumbersAfterComma){
   return Math.round(number*factor)/factor;
 };
 
+$(document).on('keydown', function (event) {
+  if(event.keyCode == 13){
+      if(window.words_obj.length > 0){
+          console.log('Jestem tu');
+          $('.give-a-hint').attr('disabled', false);
+          var results = check_correct(window.words_obj, $('.display_word').html(), $('.word-control').val());
+          if(results[0]){
+              $('input[name=lastWord]').val(window.words_obj[results[1]].eng);
+              window.words_obj.splice(results[1],1);
+              if($('.listenAndSaySwitch').is(':checked')){
+                  $('#listenAndSay').modal();
+              }else {
+                if ($('.sayAtPhraseSwitch').is(':checked')){
+                    $('#sayAtPhrase').modal();
+                }
+              }
+          }
+          if(window.words_obj.length > 0){
+              var new_number_no = Math.floor(Math.random() * window.words_obj.length);
+              $('.display_word').html(window.words_obj[new_number_no].pol);
+              $('.word-control').val('');
+          }
+      }
+      console.log(window.words_obj.length);
+      if(window.words_obj.length == 0){
+          $('#endOfLearn').modal();
+      }
+      console.log(window.words_obj);
+      event.preventDefault();
+  }
+});
+
 $(document).on('click', '.cheatsheet', function(){
   $('#cheatSheet').modal();
 });
@@ -163,7 +195,9 @@ $(document).on('click', '.gotostep3', function(){
   $('.alert-information').fadeOut(0).html('');
   $(this).attr('disabled', 'true');
   $('.skip3').attr('disabled', 'true');
-  $('#sayAtPhrase').modal();
+  if ($('.sayAtPhraseSwitch').is(':checked')){
+        $('#sayAtPhrase').modal();
+  }
 });
 
 $(document).on('click', '.skip3', function(){
@@ -209,7 +243,13 @@ $(document).on('click', '.check-result', function(){
         if(results[0]){
           $('input[name=lastWord]').val(window.words_obj[results[1]].eng);
           window.words_obj.splice(results[1],1);
-          $('#listenAndSay').modal();
+            if($('.listenAndSaySwitch').is(':checked')){
+                $('#listenAndSay').modal();
+            }else {
+                if ($('.sayAtPhraseSwitch').is(':checked')){
+                    $('#sayAtPhrase').modal();
+                }
+            }
         }
         if(window.words_obj.length > 0){
           var new_number_no = Math.floor(Math.random() * window.words_obj.length);
@@ -280,8 +320,8 @@ $(document).on('click', '.nav-sidebar > li > a.unit' ,function(){
         $sidebar_content += "<li><a href='#' disabled>Tryb pisania: <input type='checkbox' checked data-toggle='toggle' disabled></a></li>";
         $sidebar_content += "<li><a href='#' data-toggle='tooltip' title='UWAGA! To spowoduje usunięcie twojego postępu nauki!' disabled>Poziom rozszerzony: <input type='checkbox' checked data-toggle='toggle' class='extended_switch'></a></li>";
         $sidebar_content += "<li><a href='#' disabled>(POL-ENG): <input type='checkbox' checked data-toggle='toggle'></a></li>";
-        $sidebar_content += "<li><a href='#' disabled>"+"Słuchaj i mów (PRO): <input type='checkbox' checked data-toggle='toggle'></a></li>";
-        $sidebar_content += "<li><a href='#' disabled>"+"Powiedz w zdaniu (PRO): <input type='checkbox' checked data-toggle='toggle'></a></li>";
+        $sidebar_content += "<li><a href='#' disabled>"+"Słuchaj i mów (PRO): <input type='checkbox' checked data-toggle='toggle' class='listenAndSaySwitch'></a></li>";
+        $sidebar_content += "<li><a href='#' disabled>"+"Powiedz w zdaniu (PRO): <input type='checkbox' checked data-toggle='toggle' class='sayAtPhraseSwitch'></a></li>";
         $sidebar_content += "<div class='btn-group btn-group-justified'><a href='http://localhost/wordtool' class='btn btn-default'><span class='glyphicon glyphicon-home' aria-hidden='true'></span></a><a href='#' class='btn btn-default unitlist'><span class='glyphicon glyphicon-th-list' aria-hidden='true'></span></a><a href='#' class='btn btn-default'><span class='label label-danger'>PRO</span></a></div>";
         $sidebar_content += "<input type='hidden' name='unitid' value='"+unitid+"'>";
         $('.sidebar').html($sidebar_content);
