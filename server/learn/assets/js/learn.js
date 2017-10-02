@@ -3,6 +3,7 @@ var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
 var words_obj = '';
+var full_words = '';
 var get_file_content = function(filepath, divToFill, fillMode, params){
   var result = null;
   $.ajax({
@@ -30,6 +31,24 @@ var get_unit = function(str, type){
   }
 };
 
+var give_translation = function (wordsObject, word, lang) {
+  if(lang == 'pol'){
+    for(var i = 0; i < wordsObject.length; i++){
+      if(wordsObject[i].eng == word){
+        return wordsObject[i].pol;
+      }
+    }
+    return 0;
+  }else {
+      for(var i = 0; i < wordsObject.length; i++){
+          if(wordsObject[i].pol == word){
+              return wordsObject[i].eng;
+          }
+      }
+      return 0;
+  }
+};
+
 var update_counter = function(counterName, sign, value){
   switch (sign) {
     case '+':
@@ -47,40 +66,70 @@ var update_counter = function(counterName, sign, value){
     default:
       $(counterName).html(value);
   }
-}
+};
 
 
 var check_correct = function(words, wordToCheck, wordTyped){
   var correct = false;
   var elementToRemove = null;
-  for(var i = 0; i < words.length; i++){
-    if(words[i].pol == wordToCheck){
-      if(words[i].eng == wordTyped){
-        correct = true;
-        update_counter('.goodWords', '+', 1);
-        update_counter('.allWords', '-', 1);
-        elementToRemove = i;
-      }else {
-        update_counter('.badWords', '+', 1);
+  if($('input[name=mainLang]').val() == 'pol'){
+      for(var i = 0; i < words.length; i++){
+          if(words[i].pol == wordToCheck){
+              if(words[i].eng == wordTyped){
+                  correct = true;
+                  update_counter('.goodWords', '+', 1);
+                  update_counter('.allWords', '-', 1);
+                  elementToRemove = i;
+              }else {
+                  update_counter('.badWords', '+', 1);
+              }
+          }
       }
-    }
+  }else {
+      for(var i = 0; i < words.length; i++){
+          if(words[i].eng == wordToCheck){
+              if(words[i].pol == wordTyped){
+                  correct = true;
+                  update_counter('.goodWords', '+', 1);
+                  update_counter('.allWords', '-', 1);
+                  elementToRemove = i;
+              }else {
+                  update_counter('.badWords', '+', 1);
+              }
+          }
+      }
   }
   return new Array(correct, elementToRemove);
 };
 
 var give_hint = function(words, wordToCheck){
-  for(var i = 0; i < words.length; i++){
-    if(words[i].pol == wordToCheck){
-      return words[i].eng.substring(0,1);
-      break;
-    }
+  if($('input[name=mainLang]').val() == 'pol'){
+      for(var i = 0; i < words.length; i++){
+          if(words[i].pol == wordToCheck){
+              return words[i].eng.substring(0,1);
+              break;
+          }
+      }
+  }else {
+      for(var i = 0; i < words.length; i++){
+          if(words[i].eng == wordToCheck){
+              return words[i].pol.substring(0,1);
+              break;
+          }
+      }
   }
 };
 
 var push_to_word_list = function(from){
   var returned = new Array();
-  for(var i = 0; i < from.length; i++){
-    returned.push(from[i].eng);
+  if($('input[name=mainLang]').val() == 'pol'){
+      for(var i = 0; i < from.length; i++){
+          returned.push(from[i].eng);
+      }
+  }else {
+      for(var i = 0; i < from.length; i++){
+          returned.push(from[i].pol);
+      }
   }
   return returned;
 };
@@ -102,6 +151,38 @@ var roundAfterComma = function(number, countOfNumbersAfterComma){
   return Math.round(number*factor)/factor;
 };
 
+$(document).on('click', '.mainLangSwitch', function () {
+  if(this.checked){
+    $('input[name=mainLang]').val('pol');
+      var all_words = get_file_content('./templates/word_list.php', '', 'none', {unitid: $('input[name=unitid]').val(), bookid: $('input[name=bookid]').val()});
+      all_words = JSON.parse(all_words);
+      window.words_obj = all_words;
+      var first_pri_and_ext_word = Math.floor(Math.random() * window.words_obj.length);
+      if($('input[name=mainLang]').val() == 'pol'){
+          $('.display_word').html(window.words_obj[first_pri_and_ext_word].pol);
+      }else {
+          $('.display_word').html(window.words_obj[first_pri_and_ext_word].eng);
+      }
+      update_counter('.allWords', 'value', window.words_obj.length);
+      update_counter('.goodWords', 'value', 0);
+      update_counter('.badWords', 'value', 0);
+  }else {
+    $('input[name=mainLang]').val('eng');
+      var all_words = get_file_content('./templates/word_list.php', '', 'none', {unitid: $('input[name=unitid]').val(), bookid: $('input[name=bookid]').val()});
+      all_words = JSON.parse(all_words);
+      window.words_obj = all_words;
+      var first_pri_and_ext_word = Math.floor(Math.random() * window.words_obj.length);
+      if($('input[name=mainLang]').val() == 'pol'){
+          $('.display_word').html(window.words_obj[first_pri_and_ext_word].pol);
+      }else {
+          $('.display_word').html(window.words_obj[first_pri_and_ext_word].eng);
+      }
+      update_counter('.allWords', 'value', window.words_obj.length);
+      update_counter('.goodWords', 'value', 0);
+      update_counter('.badWords', 'value', 0);
+  }
+});
+
 $(document).on('keydown', function (event) {
   if(event.keyCode == 13){
       if(window.words_obj.length > 0){
@@ -109,7 +190,11 @@ $(document).on('keydown', function (event) {
           $('.give-a-hint').attr('disabled', false);
           var results = check_correct(window.words_obj, $('.display_word').html(), $('.word-control').val());
           if(results[0]){
-              $('input[name=lastWord]').val(window.words_obj[results[1]].eng);
+              if($('input[name=mainLang]').val() == 'pol'){
+                  $('input[name=lastWord]').val(window.words_obj[results[1]].eng);
+              }else {
+                  $('input[name=lastWord]').val(window.words_obj[results[1]].pol);
+              }
               window.words_obj.splice(results[1],1);
               if($('.listenAndSaySwitch').is(':checked')){
                   $('#listenAndSay').modal();
@@ -121,7 +206,12 @@ $(document).on('keydown', function (event) {
           }
           if(window.words_obj.length > 0){
               var new_number_no = Math.floor(Math.random() * window.words_obj.length);
-              $('.display_word').html(window.words_obj[new_number_no].pol);
+              if($('input[name=mainLang]').val() == 'pol'){
+                  $('.display_word').html(window.words_obj[new_number_no].pol);
+              }else {
+                  $('.display_word').html(window.words_obj[new_number_no].eng);
+              }
+
               $('.word-control').val('');
           }
       }
@@ -146,7 +236,16 @@ $(document).on('click', '.skipAll', function(){
 });
 
 $(document).on('click', '.btn-say', function(){
-  var wordToSay = $('input[name=lastWord]').val();
+    var wordToSay;
+    if($('input[name=mainLang]').val() == 'pol'){
+        console.log('Jednak tutaj');
+        wordToSay = $('input[name=lastWord]').val();
+    }else {
+        console.log('Tutaj jestem');
+        window.full_words = get_file_content('./templates/word_list.php', '', 'none', {unitid: $('input[name=unitid]').val(), bookid: $('input[name=bookid]').val()});
+        window.full_words = JSON.parse(window.full_words);
+        wordToSay = give_translation(window.full_words, $('input[name=lastWord]').val(), 'eng');
+    }
   var wordList = push_to_word_list(window.words_obj);
   var grammarList =  '#JSGF V1.0; grammar words; public <word> = ' + wordList.join(' | ') + ' ;'
   var recognition = new SpeechRecognition();
@@ -185,7 +284,17 @@ $(document).on('click', '.btn-say', function(){
 });
 
 $(document).on('click', '.btn-listen', function(){
-  var wordToSay = $('input[name=lastWord]').val();
+  var wordToSay;
+  if($('input[name=mainLang]').val() == 'pol'){
+    console.log('Jednak tutaj');
+      wordToSay = $('input[name=lastWord]').val();
+  }else {
+    console.log('Tutaj jestem');
+    window.full_words = get_file_content('./templates/word_list.php', '', 'none', {unitid: $('input[name=unitid]').val(), bookid: $('input[name=bookid]').val()});
+    window.full_words = JSON.parse(window.full_words);
+      wordToSay = give_translation(window.full_words, $('input[name=lastWord]').val(), 'eng');
+  }
+
   speak(wordToSay);
   console.log('This word is: '+wordToSay);
 });
@@ -213,7 +322,11 @@ $(document).on('change', '.extended_switch', function(){
     all_words = JSON.parse(all_words);
     window.words_obj = all_words;
     var first_pri_and_ext_word = Math.floor(Math.random() * window.words_obj.length);
-    $('.display_word').html(window.words_obj[first_pri_and_ext_word].pol);
+    if($('input[name=mainLang]').val() == 'pol'){
+        $('.display_word').html(window.words_obj[first_pri_and_ext_word].pol);
+    }else {
+        $('.display_word').html(window.words_obj[first_pri_and_ext_word].eng);
+    }
     update_counter('.allWords', 'value', window.words_obj.length);
     update_counter('.goodWords', 'value', 0);
     update_counter('.badWords', 'value', 0);
@@ -222,7 +335,11 @@ $(document).on('change', '.extended_switch', function(){
     primary_words = JSON.parse(primary_words);
     window.words_obj = primary_words;
     var first_nonextended_word = Math.floor(Math.random() * window.words_obj.length);
-    $('.display_word').html(window.words_obj[first_nonextended_word].pol);
+      if($('input[name=mainLang]').val() == 'pol'){
+          $('.display_word').html(window.words_obj[first_nonextended_word].pol);
+      }else {
+          $('.display_word').html(window.words_obj[first_nonextended_word].eng);
+      }
     update_counter('.allWords', 'value', window.words_obj.length);
     update_counter('.goodWords', 'value', 0);
     update_counter('.badWords', 'value', 0);
@@ -241,7 +358,11 @@ $(document).on('click', '.check-result', function(){
         $('.give-a-hint').attr('disabled', false);
         var results = check_correct(window.words_obj, $('.display_word').html(), $('.word-control').val());
         if(results[0]){
-          $('input[name=lastWord]').val(window.words_obj[results[1]].eng);
+          if($('input[name=mainLang]').val() == 'pol'){
+              $('input[name=lastWord]').val(window.words_obj[results[1]].eng);
+          }else {
+              $('input[name=lastWord]').val(window.words_obj[results[1]].pol);
+          }
           window.words_obj.splice(results[1],1);
             if($('.listenAndSaySwitch').is(':checked')){
                 $('#listenAndSay').modal();
@@ -253,7 +374,11 @@ $(document).on('click', '.check-result', function(){
         }
         if(window.words_obj.length > 0){
           var new_number_no = Math.floor(Math.random() * window.words_obj.length);
-          $('.display_word').html(window.words_obj[new_number_no].pol);
+          if ($('input[name=mainLang]').val() == 'pol'){
+              $('.display_word').html(window.words_obj[new_number_no].pol);
+          }else {
+              $('.display_word').html(window.words_obj[new_number_no].eng);
+          }
           $('.word-control').val('');
         }
       }
@@ -273,6 +398,8 @@ $(document).on('click', '.unitlist', function(){
   $('.loading').fadeIn("slow").delay(1000).fadeOut("slow");
   $('.choose-unit').delay(2000).fadeIn("slow");
   $('.page-header').html('<h2>'+$('input[name=bookname]').val()+'<small> '+$('input[name=bookpublisher]').val()+'</small></h2>');
+  $('.sidebar').animate({ scrollTop: 0}, 500);
+  $('.main').animate({ scrollTop: 0}, 500);
 });
 
 $(document).on('click', '.nav-sidebar > li > a.unit' ,function(){
@@ -319,10 +446,10 @@ $(document).on('click', '.nav-sidebar > li > a.unit' ,function(){
         $sidebar_content += "<h4 class='text-center sidebar-title'>Dostosuj naukę:</h4>";
         $sidebar_content += "<li><a href='#' disabled>Tryb pisania: <input type='checkbox' checked data-toggle='toggle' disabled></a></li>";
         $sidebar_content += "<li><a href='#' data-toggle='tooltip' title='UWAGA! To spowoduje usunięcie twojego postępu nauki!' disabled>Poziom rozszerzony: <input type='checkbox' checked data-toggle='toggle' class='extended_switch'></a></li>";
-        $sidebar_content += "<li><a href='#' disabled>(POL-ENG): <input type='checkbox' checked data-toggle='toggle'></a></li>";
+        $sidebar_content += "<li><a href='#' data-toggle='tooltip' title='UWAGA! To spowoduje usunięcie twojego postępu nauki!' disabled>(POL-ENG): <input type='checkbox' checked data-toggle='toggle' class='mainLangSwitch'></a></li>";
         $sidebar_content += "<li><a href='#' disabled>"+"Słuchaj i mów (PRO): <input type='checkbox' checked data-toggle='toggle' class='listenAndSaySwitch'></a></li>";
         $sidebar_content += "<li><a href='#' disabled>"+"Powiedz w zdaniu (PRO): <input type='checkbox' checked data-toggle='toggle' class='sayAtPhraseSwitch'></a></li>";
-        $sidebar_content += "<div class='btn-group btn-group-justified'><a href='http://localhost/wordtool' class='btn btn-default'><span class='glyphicon glyphicon-home' aria-hidden='true'></span></a><a href='#' class='btn btn-default unitlist'><span class='glyphicon glyphicon-th-list' aria-hidden='true'></span></a><a href='#' class='btn btn-default'><span class='label label-danger'>PRO</span></a></div>";
+        $sidebar_content += "<div class='btn-group btn-group-justified'><a href='#' class='btn btn-default unitlist'><span class='glyphicon glyphicon-arrow-left' aria-hidden='true'></span></a><a href='http://localhost/wordtool' class='btn btn-default'><span class='glyphicon glyphicon-home' aria-hidden='true'></span></a><a href='#' class='btn btn-default'><span class='label label-danger'>PRO</span></a></div>";
         $sidebar_content += "<input type='hidden' name='unitid' value='"+unitid+"'>";
         $('.sidebar').html($sidebar_content);
         return obj_msg;
@@ -333,7 +460,11 @@ $(document).on('click', '.nav-sidebar > li > a.unit' ,function(){
   $('.learn-mode').delay(2500).fadeIn("slow");
   window.words_obj = get_words();
   var firstWord = Math.floor(Math.random() * window.words_obj.length);
-  $('.display_word').html(window.words_obj[firstWord].pol);
+  if($('input[name=mainLang]').val() == 'pol'){
+      $('.display_word').html(window.words_obj[firstWord].pol);
+  }else {
+      $('.display_word').html(window.words_obj[firstWord].eng);
+  }
 });
 
 

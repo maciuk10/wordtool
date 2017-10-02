@@ -22,6 +22,7 @@
   <input type="hidden" name="bookname" value='<?php echo $_POST["title"]; ?>'>
   <input type="hidden" name="bookpublisher" value='<?php echo $_POST["publisher"]; ?>'>
   <input type="hidden" name="lastWord" value="">
+  <input type="hidden" name="mainLang" value="pol">
     <div>
         <nav class="navbar navbar-default navigation-clean-button navbar-fixed-top" style="background-color:rgb(17,2,112);">
             <div class="container">
