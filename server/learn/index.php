@@ -51,7 +51,7 @@
                 <div class="panel panel-default" style="min-height:400px;">
                   <div class="panel-body">
                     <div class="loading">
-                        <img src="../../img/page-loader-learn.svg" class="gif"/>
+                        <img src="../../img/Ellipsis.svg" class="gif"/>
                     </div>
                     <div class="choose-unit text-center">
                       <span class="glyphicon glyphicon-hand-left left-hand" aria-hidden="true"></span>
@@ -68,7 +68,7 @@
                 <span class="progress-right">
                     <span class="progress-bar"></span>
                 </span>
-                <div class="progress-value"><span class="glyphicon glyphicon-question-sign"></span></div>
+                <div class="progress-value"><span class="glyphicon glyphicon-question-sign" style="font-size: 135px"></span></div>
             </div>
         </div>
                         </div>
@@ -186,8 +186,7 @@
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-danger skipAll" data-dismiss="modal">Pomiń oba kroki dla tego słówka</button>
-      <button type="button" class="btn btn-default gotostep3" data-dismiss="modal" disabled>Krok 3: Powiedz w zdaniu</button>
-      <button type="button" class="btn btn-default skip3" data-dismiss="modal" disabled>Pomiń krok 3: Następne słówko</button>
+      <button type="button" class="btn btn-default gotostep3" data-dismiss="modal" >Krok 3: Powiedz w zdaniu</button>
     </div>
   </div>
 

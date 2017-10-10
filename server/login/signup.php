@@ -3,26 +3,61 @@
 include "../mysql_connect/connect.php";
 
 $decoded = json_decode($_POST['data'], true);
+$result = array();
 $dataToDB = array();
 foreach ($decoded as $input){
     array_push($dataToDB, $input['value']);
 }
 
-$select = "SELECT user_email FROM users WHERE user_email LIKE '".$dataToDB[2]."'";
-$result = $conn->query($select);
+$selectEmails ='SELECT user_email FROM users WHERE user_email="'.$dataToDB[0].'"';
 
-if($result->num_rows > 0){
-    echo "Konto o danym adresie już istnieje. Użyj innego e-mail";
-    die();
-}
+$seakResult = $conn->query($selectEmails);
 
-$query = "INSERT INTO users (user_firstname, user_lastname, user_email, user_password) VALUES ('".$dataToDB[0]."','".$dataToDB[1]."','".$dataToDB[2]."','".md5($dataToDB[3])."')";
+if($seakResult->num_rows > 0){
+    array_push($result, array('info'=>'Konto o podanym adresie email już istnieje', 'returnCode'=> 'E001'));
+    echo json_encode($result);
+}else{
+    $query = "INSERT INTO users(user_email, user_password) VALUES ('".$dataToDB[0]."','".md5($dataToDB[1])."')";
+
+    if($conn->query($query) === TRUE){
+
+        require_once 'vendor/autoload.php';
+
+        $email = $dataToDB[0];
+        $mail = new PHPMailer;
+
+        $mail->SMTPDebug = 3;
+        $mail->isSMTP();
+        $mail->Host = "smtp.gmail.com";
+        $mail->SMTPAuth = true;
+        $mail->Username = "maciekgrzela45";
+        $mail->Password = "maciuk33";
+        $mail->SMTPSecure = "tls";
+        $mail->Port = 587;
+
+        $mail->setLanguage("pl");
+        $mail->CharSet = "UTF-8";
+
+        $mail->From = "wordtool@wordtool.com";
+        $mail->FromName = "WordTool";
+        $mail->addAddress($dataToDB[0]);
+
+        $mail->isHTML(true);
+        $mail->Subject = "Wiadomość z portalu WordTool";
+        $mail->Body = "Gratulacje!!! Twoje konto na portalu Wordtool zostało utworzone. Otwórz poniższy link aby aktywować konto: <br>"."[ link - link ]"."<br><br><br><hr>"."W razie zapomnienia lub utraty hasła kliknij w poniższy link<br>"."[link - link]"."<br><br><br><hr>"."Wiadomość wygenerowana automatycznie z Wordtool";
+
+        if(!$mail->send()){
+            array_push($result, array('info'=>'Niestety wystąpił błąd!', 'returnCode'=> 'E003'));
+        }else {
+            array_push($result, array('info'=>'Konto w systemie Wordtool zostało utworzone. W celu aktywacji konta udaj się pod podany adres email', 'returnCode'=> 'S001'));
+            echo json_encode($result);
+        }
 
 
-if ($conn->query($query) === TRUE) {
-    echo "Konto utworzone! Możesz się teraz zalogować";
-} else {
-    echo "Ups :( Coś poszło nie tak: " . $query . "<br>" . $conn->error;
+    } else {
+        array_push($result, array('info'=>'Niestety wystąpił błąd!', 'returnCode'=> 'E002'));
+        echo json_encode($result);
+    }
 }
 
 $conn->close();

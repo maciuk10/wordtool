@@ -4,61 +4,89 @@ $.expr[":"].contains = $.expr.createPseudo(function (arg) {
     }
 });
 
-var get_file_content = function(filename, divToHide, divToFill){
-  $.ajax({
-    url: './server/templates/'+filename,
-    success: function (data) {
-      $('.login-loading').fadeIn("slow");
-      $('.'+divToHide).fadeOut("slow");
-      $('.login-loading').fadeOut("slow");
-      $('.'+divToFill).fadeOut(0).delay(500).html(data).fadeIn("slow");
+var asyncRequest = function (url, type, data, async, beforeSend_callback, success_callback) {
+    $.ajax({
+        url: url,
+        type: type,
+        data: data,
+        async: async,
+        beforeSend: beforeSend_callback,
+        success: success_callback
+    });
+};
+
+$(document).on('click', '.already', function(){
+    asyncRequest('./server/templates/login.html', 'POST', {}, true, function(){}, function (data) {
+        $('.login-loading').fadeIn("slow");
+        $('.register-photo').fadeOut("slow");
+        $('.login-loading').fadeOut("slow");
+        $('.login-container').fadeOut(0).delay(500).html(data).fadeIn("slow");
+    });
+});
+
+$(document).on('click', '.jump-to-register', function () {
+    asyncRequest('./server/templates/register.html', 'POST', {}, true, function(){}, function (data) {
+        $('.login-loading').fadeIn("slow");
+        $('.login-dark').fadeOut("slow");
+        $('.login-loading').fadeOut("slow");
+        $('.login-container').fadeOut(0).delay(500).html(data).fadeIn("slow");
+    });
+});
+
+$(document).on('submit', 'form.register-form', function (event) {
+    var data = $(this).serializeArray();
+    console.log(data);
+    $(data).each(function (iterator, field) {
+        if (field.value == ""){
+            $('input[name='+field.name+']').addClass('error-form');
+        }else {
+            if($('input[name='+field.name+']').hasClass('error-form')){
+                $('input[name='+field.name+']').removeClass('error-form');
+            }
+        }
+    });
+
+    if(!($('input[name=password]').val() === $('input[name=password-repeat]').val())){
+        $('input[name=password]').addClass('error-form');
+        $('input[name=password-repeat]').addClass('error-form');
     }
-  });
-}
 
-var triggerLogin = function(){
-  get_file_content('login.html', 'register-photo', 'login-container');
-}
+    if(!($('.agree').is(':checked'))){
+        $('.agree-label').addClass('error-form');
+    }
 
-var triggerRegister = function(){
-  get_file_content('register.html', 'login-dark', 'login-container');
-}
+    if($('.agree').is(':checked')){
+        $('.agree-label').removeClass('error-form');
+    }
 
+    if($(".error-form").length == 0){
+        console.log('Everything is OK');
+        asyncRequest($(this).attr('action'),$(this).attr('method'), {data: JSON.stringify(data)}, true, function () {
+            $('.login-container').fadeOut("slow");
+            $('.signup-loading').delay(500).fadeIn("slow");
+        }, function (msg) {
+            msg = JSON.parse(msg);
+            console.log(msg);
+            $('.signup-loading .content p').html(msg[0].info);
+            $('.signup-loading').delay(1000).fadeOut("slow");
+            if(msg[0].returnCode.substr(0,1) == 'E'){
+                $('.login-container').delay(1500).fadeIn("slow");
+            }else {
+                $('.welcome-container').delay(2000).fadeIn("slow");
+            }
+            $('input').val("");
+        });
+        $('input:-webkit-autofill').each(function(){
+            var text = $(this).val();
+            var name = $(this).attr('name');
+            $(this).after(this.outerHTML).remove();
+            $('input[name=' + name + ']').val(text);
+        });
+    }
+    event.preventDefault();
+});
 
 $(document).ready(function () {
-    $('form.register-form').on('submit', function (event) {
-        var data = $(this).serializeArray();
-        $(data).each(function (iterator, field) {
-           if (field.value == ""){
-               $('#'+field.name).addClass('error-form');
-           }else {
-               if($('#'+field.name).hasClass('error-form')){
-                   $('#'+field.name).removeClass('error-form');
-               }
-           }
-        });
-
-        if($(".error-form").length == 0){
-            $.ajax({
-                url: $(this).attr('action'),
-                type: $(this).attr('method'),
-                data: {
-                    data: JSON.stringify(data)
-                },
-                beforeSend: function () {
-                    $('.login-container').fadeOut("slow");
-                    $('.signup-loading').delay(500).fadeIn("slow");
-                },
-                success: function (msg) {
-                    $('.signup-loading .content p').html(msg);
-                    $('.signup-loading').delay(1000).fadeOut("slow");
-                    $('.login-container').delay(1500).fadeIn("slow");
-                    $('input').val("");
-                }
-            });
-        }
-        event.preventDefault();
-    });
 
 
     $('.contact-form').on('submit', function (event) {

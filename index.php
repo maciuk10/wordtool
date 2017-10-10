@@ -22,14 +22,14 @@
 
 <body>
 <div class="loading">
-    <img src="./img/page-loader.svg" class="gif"/>
+    <img src="img/Ellipsis.svg" class="gif"/>
 </div>
 <div class="login-loading">
-    <img src="./img/page-loader.svg" class="gif"/>
+    <img src="img/Ellipsis.svg" class="gif"/>
 </div>
 <div class="signup-loading">
     <div class="content text-center">
-        <img src="./img/Ellipsis.svg" class="gif"/>
+        <img src="img/Ellipsis.svg" class="gif"/>
         <p class="text-center sending">Tworzenie konta. Proszę czekać</p>
     </div>
 </div>
@@ -217,7 +217,7 @@
 </section>
 <section class="contact" id="contact">
     <div class="form-loading">
-        <img src="./img/page-loader.svg" class="gif"/>
+        <img src="img/Ellipsis.svg" class="gif"/>
         <p class="text-center sending">Wysyłanie formularza. Proszę czekać</p>
     </div>
     <div class="contact-container container">

@@ -2,7 +2,7 @@
 
 include "server/mysql_connect/connect.php";
 
-$sql = "SELECT book_id, name, publisher, cover FROM books";
+$sql = "SELECT book_id, name, publisher, path FROM books";
 $result = $conn->query($sql);
 
 if($result->num_rows > 0){
@@ -10,7 +10,7 @@ if($result->num_rows > 0){
     while($row = $result->fetch_assoc()) {
         echo "<div class='book_item'>";
         echo "<div class='book_img'>";
-        echo "<img src='data:image/jpeg;base64,".base64_encode( $row['cover'] )."' />";
+        echo "<img src='".$row['path']."' alt='".$row['name']."' >";
         echo "</div>";
         echo "<div class='book_desc'>";
         echo "<p class='desc' style='display: none'>".$row['name']."</p>";

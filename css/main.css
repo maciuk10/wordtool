@@ -22,6 +22,26 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   color: rgb(255, 255, 255);
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-webkit-autofill:empty,
+input:-webkit-autofill:after,
+input:-webkit-autofill:link,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s !important;
+  background-color: transparent !important;
+  -webkit-background-image: linear-gradient(0deg, transparent, transparent) !important;
+}
+
 textarea {
   resize: none;
 }
@@ -523,6 +543,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   transform: translate(-50%, -50%);
 }
 
+
+
 .form-loading {
   position: relative;
   top: 0;
@@ -644,9 +666,9 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .error-form {
-  background: rgba(153, 0, 0, 0.2) !important;
-  border-radius: 0rem !important;
-  border: 2px solid rgb(153, 0, 0) !important;
+  /*background: rgba(153, 0, 0, 0.2) !important;*/
+  border-radius: 0px !important;
+  border-bottom: 2px solid rgb(153, 0, 0) !important;
   color: rgb(255, 255, 255) !important;
 }
 

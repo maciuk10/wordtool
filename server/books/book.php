@@ -26,7 +26,7 @@
 <body>
 <input type="hidden" name="bookid" class="bookid" value="<?php echo $_POST['book_id']; ?>">
 <div class="loading">
-    <img src="../../img/page-loader.svg" class="gif"/>
+    <img src="../../img/Ellipsis.svg" class="gif"/>
 </div>
 <nav class="navbar navbar-ct-black nav-book" role="navigation">
     <div class="container">
