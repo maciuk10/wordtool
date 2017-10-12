@@ -65,14 +65,17 @@ $(document).on('submit', 'form.register-form', function (event) {
             $('.login-container').fadeOut("slow");
             $('.signup-loading').delay(500).fadeIn("slow");
         }, function (msg) {
-            msg = JSON.parse(msg);
-            console.log(msg);
-            $('.signup-loading .content p').html(msg[0].info);
-            $('.signup-loading').delay(1000).fadeOut("slow");
-            if(msg[0].returnCode.substr(0,1) == 'E'){
-                $('.login-container').delay(1500).fadeIn("slow");
-            }else {
-                $('.welcome-container').delay(2000).fadeIn("slow");
+            try {
+                msg = JSON.parse(msg);
+                $('.signup-loading .content p').html(msg[0].info);
+                $('.signup-loading').delay(1000).fadeOut("slow");
+                if(msg[0].returnCode.substr(0,1) == 'E'){
+                    $('.login-container').delay(1500).fadeIn("slow");
+                }else {
+                    $('.welcome-container').delay(2000).fadeIn("slow");
+                }
+            }catch (jsonParseException) {
+                console.log(jsonParseException.message);
             }
             $('input').val("");
         });

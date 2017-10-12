@@ -217,7 +217,9 @@ input:checked + .slider:before {
   display: none;
 }
 .carousel-bg {
-  background: rgba(0,0,0,0.6);
+    background: rgb(0,0,0);
+    margin: 0px;
+    line-height: 200%;
 }
 
 .carousel-cheat,
@@ -255,4 +257,13 @@ input:checked + .slider:before {
 
 #cheatSheet {
     padding: 0px !important;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0px;
+    padding: 0px;
 }
