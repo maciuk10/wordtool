@@ -15,24 +15,6 @@ var asyncRequest = function (url, type, data, async, beforeSend_callback, succes
     });
 };
 
-$(document).on('click', '.already', function(){
-    asyncRequest('./server/templates/login.html', 'POST', {}, true, function(){}, function (data) {
-        $('.login-loading').fadeIn("slow");
-        $('.register-photo').fadeOut("slow");
-        $('.login-loading').fadeOut("slow");
-        $('.login-container').fadeOut(0).delay(500).html(data).fadeIn("slow");
-    });
-});
-
-$(document).on('click', '.jump-to-register', function () {
-    asyncRequest('./server/templates/register.html', 'POST', {}, true, function(){}, function (data) {
-        $('.login-loading').fadeIn("slow");
-        $('.login-dark').fadeOut("slow");
-        $('.login-loading').fadeOut("slow");
-        $('.login-container').fadeOut(0).delay(500).html(data).fadeIn("slow");
-    });
-});
-
 $(document).on('submit', 'form.register-form', function (event) {
     var data = $(this).serializeArray();
     console.log(data);
@@ -90,7 +72,6 @@ $(document).on('submit', 'form.register-form', function (event) {
 });
 
 $(document).ready(function () {
-
 
     $('.contact-form').on('submit', function (event) {
         var firstname = $('.firstname').val();

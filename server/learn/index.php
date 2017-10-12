@@ -32,9 +32,10 @@
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav">
                         <li role="presentation"><a href="../../index.php" style="color:rgb(255,255,255);">Home</a></li>
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:rgb(255,255,255);"><?php echo substr($_POST['title'], 0, 15)."..."; ?> <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                              <?php include "./templates/book_list.php"; ?>
+                        <li class="dropdown mega-dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo substr($_POST['title'], 0, 15)."..."; ?> </a>
+                            <ul class="dropdown-menu mega-dropdown-menu">
+                                <?php include "./templates/book_list.php"; ?>
                             </ul>
                         </li>
                     </ul>

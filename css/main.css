@@ -16,32 +16,6 @@ input, button {
   outline: none !important;
 }
 
-input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-  background-color: rgba(0, 0, 0, 0.4) !important;
-  background-image: none;
-  color: rgb(255, 255, 255);
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active,
-input:-webkit-autofill:empty,
-input:-webkit-autofill:after,
-input:-webkit-autofill:link,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
-  transition: background-color 5000s ease-in-out 0s !important;
-  background-color: transparent !important;
-  -webkit-background-image: linear-gradient(0deg, transparent, transparent) !important;
-}
-
 textarea {
   resize: none;
 }
@@ -100,7 +74,13 @@ textarea {
   text-align: center;
 }
 
-
+.done-well {
+  background: rgba(0, 128, 0, 0.2);
+  border-radius: 0rem;
+  border: 2px solid rgb(0, 128, 0);
+  color: rgb(255, 255, 255);
+  display: none;
+}
 
 .wt_padding {
   padding-top: 0.3125rem;
@@ -617,80 +597,9 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   border: none;
 }
 
-.login label {
-  color: rgb(255, 255, 255);
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-.login input {
-  background: rgba(0, 0, 0, 0.4);
-  border: 2px solid rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
-  border-radius: 0;
-}
-
-.login input:focus, .login input:active, .login input:hover, .login input:visited {
-  background-color: transparent;
-  color: rgb(255, 255, 255);
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 0;
-  outline: none;
-}
-
-.login input:-webkit-autofill, .login input:-webkit-autofill:hover, .login input:-webkit-autofill:focus, .login input:-webkit-autofill:visited, .login input:-webkit-autofill:active {
-  background: rgba(0, 0, 0, 0.4) !important;
-  border: 2px solid rgb(255, 255, 255) !important;
-  border-radius: 0;
-  transition: background-color 5000s ease-in-out 0s;
-  color: rgb(255, 255, 255);
-  -webkit-text-fill-color: rgb(255, 255, 255) !important;
-}
-
-.login input::placeholder {
-  color: rgb(255, 255, 255) !important;
-}
-
-.login button {
-  background: rgba(0, 0, 0, 0.4) !important;
-  border-radius: 0;
-  border: 2px solid rgb(255, 255, 255);
-  color: rgb(255, 255, 255) !important;
-  font-size: 1.1rem;
-}
-
-.login button:focus, .login button:active, .login button:hover, .login button:visited {
-  background: transparent !important;
-  color: rgb(255, 255, 255) !important;
-  border: 2px solid rgb(255, 255, 255);
-}
-
-.error-form {
-  /*background: rgba(153, 0, 0, 0.2) !important;*/
-  border-radius: 0px !important;
-  border-bottom: 2px solid rgb(153, 0, 0) !important;
-  color: rgb(255, 255, 255) !important;
-}
-
-.done-well {
-  background: rgba(0, 128, 0, 0.2);
-  border-radius: 0rem;
-  border: 2px solid rgb(0, 128, 0);
-  color: rgb(255, 255, 255);
-  display: none;
-}
-
-.login-middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .nav-right-xs {
   display: none;
 }
-
 
 .login-dark {
   position: relative;
@@ -794,6 +703,58 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   padding:20px 60px;
   color:#505e6c;
 }
+
+#login-dp{
+  min-width: 250px;
+  padding: 14px 14px 0;
+  overflow:hidden;
+  background-color:rgba(255,255,255,0.95);
+}
+#login-dp .help-block{
+  font-size:12px
+}
+#login-dp .bottom{
+  background-color:rgba(255,255,255,.8);
+  border-top:1px solid #ddd;
+  clear:both;
+  padding:14px;
+}
+#login-dp .social-buttons{
+  margin:12px 0
+}
+#login-dp .social-buttons a{
+  width: 49%;
+}
+#login-dp .form-group {
+  margin-bottom: 10px;
+}
+.btn-fb{
+  color: #fff;
+  background-color:#3b5998;
+}
+.btn-fb:hover{
+  color: #fff;
+  background-color:#496ebc
+}
+.btn-tw{
+  color: #fff;
+  background-color:#55acee;
+}
+.btn-tw:hover{
+  color: #fff;
+  background-color:#59b5fa;
+}
+@media(max-width:768px){
+  #login-dp{
+    background-color: inherit;
+    color: #fff;
+  }
+  #login-dp .bottom{
+    background-color: inherit;
+    border-top:0 none;
+  }
+}
+
 
 @media (max-width:991px) {
   .register-photo form {

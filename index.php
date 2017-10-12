@@ -107,12 +107,87 @@
                             <p>Koszyk</p>
                         </a>
                     </li>
-                    <li class="login-button">
-                        <a href="!" class="login-btn">
-                            <i class="pe-7s-user">
-                            </i>
-                            <p>Zaloguj się</p>
+                    <li class="register-button dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="pe-7s-add-user"></i>
+                            <p>Rejestracja</p>
                         </a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li class="register">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span>Zarejestruj się</span>
+                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="email_login">Adres email</label>
+                                                <input type="email" class="form-control" id="email_login" placeholder="Adres email" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="password_login">Hasło</label>
+                                                <input type="password" class="form-control" id="password_login" placeholder="Hasło" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="password_login_repeat">Powtórz Hasło</label>
+                                                <input type="password" class="form-control" id="password_login_repeat" placeholder="Powtórz hasło" required>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="remember_me"> <span>Zgadzam się z warunkami Wordtool</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-block">Utwórz konto</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="bottom text-center">
+                                        <b class="text-primary">Stań się częścią Wordtool i ucz się razem z nami</b>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="login-button dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="pe-7s-user"></i>
+                            <p>Logowanie</p>
+                        </a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li class="login">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span>Zaloguj się przez</span>
+                                        <div class="social-buttons">
+                                            <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                                            <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                                        </div>
+                                        <span>lub</span>
+                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="email_login">Adres email</label>
+                                                <input type="email" class="form-control" id="email_login" placeholder="Email address" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="password_login">Hasło</label>
+                                                <input type="password" class="form-control" id="password_login" placeholder="Password" required>
+                                                <div class="help-block text-right"><a href="">Zapomniałeś hasła?</a></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-block">Zaloguj</button>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="remember_me"> <span>Zapamiętaj mnie</span>
+                                                </label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="bottom text-center">
+                                        <b class="text-primary">Gotowy na kolejną dawkę słownictwa?</b>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </li>
                     <?php
                     if (isset($_SESSION['logged'])){
@@ -153,9 +228,6 @@
                 <a href="#description">
                     <i class="down-arrow-icon pe-7s-angle-down"></i>
                 </a>
-            </div>
-            <div class="container middle-container login-container">
-              <?php include "./server/templates/login.html" ?>
             </div>
         </div>
     </div>
