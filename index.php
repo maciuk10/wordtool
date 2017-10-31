@@ -50,14 +50,6 @@
                                 <p class="hidden-xxs">Szukaj książki</p>
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <i class="pe-7s-cart">
-                                    <span class="label">0</span>
-                                </i>
-                                <p class="hidden-xxs">Koszyk</p>
-                            </a>
-                        </li>
                         <li class="login-button">
                             <a href="#main-page" class="login-btn">
                                 <i class="pe-7s-user">
@@ -99,14 +91,6 @@
                             <p>Szukaj książki</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <i class="pe-7s-cart">
-                                <span class="label">0</span>
-                            </i>
-                            <p>Koszyk</p>
-                        </a>
-                    </li>
                     <li class="register-button dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="pe-7s-add-user"></i>
@@ -117,22 +101,24 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <span>Zarejestruj się</span>
-                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="register-nav">
                                             <div class="form-group">
-                                                <label class="sr-only" for="email_login">Adres email</label>
-                                                <input type="email" class="form-control" id="email_login" placeholder="Adres email" required>
+                                                <label class="sr-only" for="email_register">Adres email</label>
+                                                <input name="email" id="email_register" class="form-control" placeholder="Adres e-mail" data-validation="email" data-validation-error-msg="Niepoprawny adres e-mail">
                                             </div>
                                             <div class="form-group">
-                                                <label class="sr-only" for="password_login">Hasło</label>
-                                                <input type="password" class="form-control" id="password_login" placeholder="Hasło" required>
+                                                <label class="sr-only" for="password_register">Hasło</label>
+                                                <input type="password" name="pass_confirmation" id="password_register" class="form-control pass-reg" placeholder="Hasło" data-validation="strength" data-validation-strength="2" data-validation-error-msg="Niepoprawne lub zbyt słabe hasło">
+                                                <progress class="password-complexity pc-reg" value="0"></progress>
                                             </div>
                                             <div class="form-group">
-                                                <label class="sr-only" for="password_login_repeat">Powtórz Hasło</label>
-                                                <input type="password" class="form-control" id="password_login_repeat" placeholder="Powtórz hasło" required>
+                                                <label class="sr-only" for="password_register_repeat">Powtórz Hasło</label>
+                                                <input type="password" name="pass" id="password_register_repeat" class="form-control" placeholder="Powtórz hasło" data-validation="confirmation" data-validation-error-msg="Hasła się nie zgadzają">
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" class="remember_me"> <span>Zgadzam się z warunkami Wordtool</span>
+                                                    <input type="checkbox" data-validation="required" data-validation-error-msg="Nie zaakceptowałeś naszego regulaminu">
+                                                    Zgadzam się z <a href="..." target="_blank">regulaminem Wordtool</a>
                                                 </label>
                                             </div>
                                             <div class="form-group">
@@ -156,20 +142,16 @@
                             <li class="login">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <span>Zaloguj się przez</span>
-                                        <div class="social-buttons">
-                                            <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                            <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-                                        </div>
-                                        <span>lub</span>
+                                        <span>Zaloguj się</span>
                                         <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
                                             <div class="form-group">
                                                 <label class="sr-only" for="email_login">Adres email</label>
-                                                <input type="email" class="form-control" id="email_login" placeholder="Email address" required>
+                                                <input name="email" id="email_login" class="form-control" placeholder="Adres e-mail" data-validation="email" data-validation-error-msg="Niepoprawny adres e-mail">
                                             </div>
                                             <div class="form-group">
                                                 <label class="sr-only" for="password_login">Hasło</label>
-                                                <input type="password" class="form-control" id="password_login" placeholder="Password" required>
+                                                <input type="password" name="pass_confirmation" id="password_login" class="form-control pass-log" placeholder="Hasło" data-validation="strength" data-validation-strength="2" data-validation-error-msg="Niepoprawne lub zbyt słabe hasło">
+                                                <progress class="password-complexity pc-log" value="0"></progress>
                                                 <div class="help-block text-right"><a href="">Zapomniałeś hasła?</a></div>
                                             </div>
                                             <div class="form-group">
@@ -177,7 +159,7 @@
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" class="remember_me"> <span>Zapamiętaj mnie</span>
+                                                    <input type="checkbox" class="remember_me"><span>Zapamiętaj mnie</span>
                                                 </label>
                                             </div>
                                         </form>
@@ -330,109 +312,7 @@
     </div>
 </section>
 <section class="donate" id="donate">
-
-    <?php
-
-    require './vendor/autoload.php';
-
-    use PayPal\Api\Payment;
-    use PayPal\Api\PaymentExecution;
-
-    define('START_URL', 'http://'.$_SERVER['SERVER_NAME'].'/wordtool');
-    define('SUCCESS_ICON', 'pe-7s-smile');
-    define('SUCCESS_TEXT', 'Dziękujemy za wsparcie!!! Dzięki Tobie WordTool będzie jeszcze lepszy :)');
-    define('FAILURE_ICON', 'pe-7s-shield');
-    define('FAILURE_TEXT', 'Coś poszło nie tak? Nie martw się i spróbuj ponownie :)');
-
-
-    $paypal = new \PayPal\Rest\ApiContext(
-        new \PayPal\Auth\OAuthTokenCredential(
-            'AQ4aGPTUz_4D_440GKYA5F2fzyrYPjpyx6uWGbfh-FFfbIec8qlkH9HDXJRWX734meHZAXWAgiVwUvO3',
-            'EHrJv13iK2RS0g5rgCnsOJ1vVQukL0OYJ2Cjzc4ij663OyqJV2vm2UHNCikbPRzvwdEqNWHmA_l_pFeu'
-        )
-    );
-
-    if(!(isset($_GET['success']))){
-        echo '<div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <h1 class="books_header">Wesprzyj nas!</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <p class="contact-desc">Serwis WordTool jest projektem działającym na zasadzie dotacji. Jeśli więc spodobała Ci się nasza aplikacja, przekaż parę groszy aby stała się jeszcze lepsza :) </p>
-            </div>
-        </div>
-        <div class="row text-center">
-            <form class="form-inline" method="post" action="server/checkout.php" autocomplete="off">
-                <div class="form-group">
-                    <div class="col-xs-12">
-                        <div class="btn-toggleable" data-toggle="buttons">
-                            <button type="button" class="btn btn-price"><input type="radio" name="price" value="15" />15zł</button>
-                            <button type="button" class="btn btn-price"><input type="radio" name="price" value="10" />10zł</button>
-                            <button type="button" class="btn btn-price"><input type="radio" name="price" value="5" />5zł</button>
-                            <label class="btn btn-price">
-                                <input type="number" name="price_oth" class="price-oth" min="1" placeholder="Inna kwota (zł)">
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                <div class="row">
-                <div class="col-xs-12"><button type="submit" class="btn btn-price btn-contribute">Wesprzyj!</button>
-</div>
-</div>
-                </div>
-            </form>
-        </div>
-    </div>';
-    }else{
-
-        if((!(isset($_GET['paymentId'], $_GET['PayerID']))) || (bool)$_GET['success'] === false) {
-            echo '<div class="container">
-        <div class="row text-center">
-            <div class="col-xs-12 success">
-                <i class="'.FAILURE_ICON.'"></i>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-xs-12">
-                <p class="success-caption">'.FAILURE_TEXT.'</p>
-            </div>
-        </div>
-    </div>';
-        }else {
-            $paymentID = $_GET['paymentId'];
-            $payerID = $_GET['PayerID'];
-
-            $payment = Payment::get($paymentID, $paypal);
-
-            $execute = new PaymentExecution();
-            $execute->setPayerId($payerID);
-
-            try {
-                $result = $payment->execute($execute, $paypal);
-            }catch (Exception $e){
-                die($e);
-            }
-
-            echo '<div class="container">
-        <div class="row text-center">
-            <div class="col-xs-12 success">
-                <i class="'.SUCCESS_ICON.'"></i>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-xs-12">
-                <p class="success-caption">'.SUCCESS_TEXT.'</p>
-            </div>
-        </div>
-    </div>';
-        }
-    }
-
-    ?>
+    <?php include "./server/templates/donation.php"?>
 </section>
 <footer class="footer" id="footer">
     <div class="container">
@@ -474,15 +354,22 @@
         </div>
     </div>
 </footer>
-<script>
-    document.write('<script src="http://' +
-        (location.host || 'localhost').split(':')[0] +
-        ':35729/livereload.js?snipver=1"></' + 'script>')
-</script>
 <script>window.jQuery || document.write('<script src="./js/jquery.js"><\/script>')</script>
 <script src="./js/bootstrap.min.js"></script>
 <script src="./js/ct-navbar.js"></script>
 <script src="./js/main.js"></script>
 <script src="./js/slick.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script>
+    $.validate({
+        form: '#login-nav, #register-nav',
+        validateOnBlur : false,
+        modules : 'location, date, security, file',
+        onModulesLoaded : function() {
+            console.log('All modules loaded');
+        }
+    });
+
+</script>
 </body>
 </html>

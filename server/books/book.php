@@ -51,14 +51,6 @@
                         <p>Strona Główna</p>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="pe-7s-cart">
-                            <span class="label">0</span>
-                        </i>
-                        <p class="hidden-xxs">Koszyk</p>
-                    </a>
-                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="pe-7s-user"></i>
@@ -69,6 +61,8 @@
                         <li><a href="#"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Postęp nauki</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Moje książki</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>  Regulamin</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span> WYKUP PREMIUM</a></li>
                         <li class="divider"></li>
                         <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Wyloguj</a></li>
                     </ul>
@@ -107,7 +101,7 @@
                     <p class="data-publisher"></p>
                     <p class="data-description"></p>
                     <form class="form-access" action="../learn/index.php" method="post">
-                        <button type="submit" class="btn btn-access">Uzyskaj dostęp (5.00zł)</button>
+                        <button type="submit" class="btn btn-access">Uzyskaj dostęp</button>
                         <input type="hidden" class="data-title" name="title" value="">
                         <input type="hidden" class="data-publisher" name="publisher" value="">
                         <input type="hidden" class="bookid" name="bookid" value="">

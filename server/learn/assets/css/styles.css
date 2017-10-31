@@ -272,6 +272,16 @@ input:checked + .slider:before {
 .mega-dropdown {
     position: static !important;
 }
+.mega-dropdown-link {
+    color: rgb(255,255,255) !important;
+    font-weight: normal !important;
+}
+
+.mega-dropdown-link:hover {
+    color: rgb(255,255,255) !important;
+    font-weight: bold !important;
+}
+
 .mega-dropdown-menu {
     padding: 20px 0px;
     width: 100%;

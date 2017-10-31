@@ -33,7 +33,7 @@
                     <ul class="nav navbar-nav">
                         <li role="presentation"><a href="../../index.php" style="color:rgb(255,255,255);">Home</a></li>
                         <li class="dropdown mega-dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo substr($_POST['title'], 0, 15)."..."; ?> </a>
+                            <a href="#" class="dropdown-toggle mega-dropdown-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo substr($_POST['title'], 0, 15)."..."; ?> </a>
                             <ul class="dropdown-menu mega-dropdown-menu">
                                 <?php include "./templates/book_list.php"; ?>
                             </ul>
