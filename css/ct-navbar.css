@@ -107,7 +107,7 @@ h1 .subtitle{
     font-size: 14px;
 }
 .navbar-default {
-    background-color: #D9D9D9;
+    background-color: transparent;
     
 }
 .navbar .navbar-brand {
@@ -283,8 +283,7 @@ h1 .subtitle{
 }
 
 .navbar:not(.navbar-transparent).navbar-ct-lowTransparency{
-    background-color: rgba(0, 0, 0, 0.6);
-    background-color: rgba(0, 0, 0, 0.6);
+    background: rgba(0,0,0,0.7);
 }
 
 .dropdown-menu > li > a {

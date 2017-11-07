@@ -4,6 +4,49 @@ $.expr[":"].contains = $.expr.createPseudo(function (arg) {
     }
 });
 
+var getMailDomain = function(mailAdress) {
+    var from = mailAdress.indexOf('@')+1;
+    var result = "";
+    var domain = mailAdress.substring(from);
+    switch(domain) {
+        case "gmail.com":
+            result = "http://www.gmail.com";
+            break;
+        case "onet.pl":
+        case "op.pl":
+        case "onet.eu":
+        case "poczta.onet.eu":
+        case "vp.pl":
+        case "buziaczek.pl":
+        case "autograf.pl":
+        case "poczta.onet.pl":
+            result = "http://www.poczta.onet.pl";
+            break;
+        case "wp.pl":
+            result = "http://www.poczta.wp.pl";
+            break;
+        case "interia.pl":
+        case "interia.eu":
+        case "intmail.pl":
+        case "interia.com":
+        case "pisz.to":
+        case "ogarnij.se":
+        case "poczta.fm":
+        case "vip.interia.pl":
+        case "interiowy.pl":
+        case "pacz.to":
+            result = "http://www.poczta.interia.pl";
+            break;
+        case "outlook.com":
+        case "hotmail.com":
+            result = "http://www.outlook.com";
+            break;
+        default: 
+            result = -1;
+    }
+    return result;
+};
+
 var calculateComplexity = function (password) {
     var complexity = 0;
     var regExps = [
@@ -38,7 +81,6 @@ var asyncRequest = function (url, type, data, async, beforeSend_callback, succes
 
 $(document).on('keyup', '.pass-log', function(){
     var progress = $('.pc-log');
-    console.log(progress);
     var complexity = calculateComplexity($('.pass-log').val());
     progress.val(complexity.value);
     progress.attr('max', complexity.max);
@@ -46,65 +88,94 @@ $(document).on('keyup', '.pass-log', function(){
 
 $(document).on('keyup', '.pass-reg', function(){
     var progress = $('.pc-reg');
-    console.log(progress);
     var complexity = calculateComplexity($('.pass-reg').val());
     progress.val(complexity.value);
     progress.attr('max', complexity.max);
 });
 
-$(document).on('submit', 'form.register-form', function (event) {
-    var data = $(this).serializeArray();
-    console.log(data);
-    $(data).each(function (iterator, field) {
-        if (field.value == ""){
-            $('input[name='+field.name+']').addClass('error-form');
-        }else {
-            if($('input[name='+field.name+']').hasClass('error-form')){
-                $('input[name='+field.name+']').removeClass('error-form');
+$(document).on('click', '.logout', function(){
+    asyncRequest(
+        "./server/login/logout.php",
+        "POST",
+        {},
+        true,
+        function(){},
+        function(msg){
+            try {
+                window.location.replace(msg);
+            }catch (locationException){
+                console.log(locationException.message);
             }
         }
-    });
+    );
+});
 
-    if(!($('input[name=password]').val() === $('input[name=password-repeat]').val())){
-        $('input[name=password]').addClass('error-form');
-        $('input[name=password-repeat]').addClass('error-form');
-    }
-
-    if(!($('.agree').is(':checked'))){
-        $('.agree-label').addClass('error-form');
-    }
-
-    if($('.agree').is(':checked')){
-        $('.agree-label').removeClass('error-form');
-    }
-
-    if($(".error-form").length == 0){
-        console.log('Everything is OK');
-        asyncRequest($(this).attr('action'),$(this).attr('method'), {data: JSON.stringify(data)}, true, function () {
-            $('.login-container').fadeOut("slow");
-            $('.signup-loading').delay(500).fadeIn("slow");
-        }, function (msg) {
+$(document).on('submit', '#login-nav', function(event) {
+    var data = $(this).serializeArray();
+    console.log(data);
+    asyncRequest(
+        $(this).attr('action'),
+        $(this).attr('method'),
+        {
+            data: JSON.stringify(data)
+        },
+        true,
+        function(){},
+        function(msg){
             try {
                 msg = JSON.parse(msg);
-                $('.signup-loading .content p').html(msg[0].info);
-                $('.signup-loading').delay(1000).fadeOut("slow");
-                if(msg[0].returnCode.substr(0,1) == 'E'){
-                    $('.login-container').delay(1500).fadeIn("slow");
-                }else {
-                    $('.welcome-container').delay(2000).fadeIn("slow");
+                if(msg[0].redirect !== null){
+                    window.location.replace(msg[0].redirect);
                 }
+                console.log(msg);
             }catch (jsonParseException) {
                 console.log(jsonParseException.message);
             }
-            $('input').val("");
-        });
-        $('input:-webkit-autofill').each(function(){
-            var text = $(this).val();
-            var name = $(this).attr('name');
-            $(this).after(this.outerHTML).remove();
-            $('input[name=' + name + ']').val(text);
-        });
-    }
+        }
+    );
+    event.preventDefault();
+})
+
+$(document).on('submit', '#register-nav', function registerHandler(event) {
+    $('#login-dp').fadeOut();
+    var data = $(this).serializeArray();
+    console.log(data);
+
+    asyncRequest($(this).attr('action'),$(this).attr('method'), {data: JSON.stringify(data)}, true, function () {}, function (msg) {
+        try {
+            msg = JSON.parse(msg);
+            console.log(msg);
+        }catch (jsonParseException) {
+            console.log(msg);
+        }
+        var afterLoginMsg = "";
+        if(msg[0].returnCode.indexOf('S0') !== -1){
+            var mailDomain = getMailDomain(data[0].value);
+            if (mailDomain !== -1) {
+                afterLoginMsg = msg[0].info+'<p class="text-right">Za chwilę zostaniesz przekierowany do twojego serwera pocztowego</p><p class="text-right"><a class="btn btn-redirect">Przekieruj ręcznie</a></p>';
+                setTimeout(function() {
+                    window.location.replace(mailDomain);
+                }, 10000);
+            }else {
+                afterLoginMsg = msg[0].info;
+            }
+            $('.snackbar').html(afterLoginMsg);
+            $('.snackbar').addClass('show');
+            setTimeout(function(){
+                $('.snackbar').removeClass('show');
+            },10000);
+        }else {
+            afterLoginMsg = msg[0].info;
+            $('.snackbar').html(afterLoginMsg);
+            $('.snackbar').addClass('show');
+            setTimeout(function(){
+                $('.snackbar').removeClass('show');
+            },10000);
+        }
+    });
+    $(this).trigger('reset');
+    $(this).find("progress").val(0);
+
     event.preventDefault();
 });
 
@@ -185,6 +256,14 @@ $(document).on('keyup', '.input-custom', function(){
 });
 
 $(document).ready(function () {
+
+    if($('input.activate_info').length == 1){
+        $('.snackbar').html($('input.activate_info').val());
+        $('.snackbar').addClass('show');
+        setTimeout(function(){
+            $('.snackbar').removeClass('show');
+        },3000);
+    }
 
     var $slider = $('.books_slider').slick({
         slidesToShow: 4,

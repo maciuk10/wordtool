@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +10,9 @@
     <meta name="author" content="">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-    <title>WordTool</title>
+    <title>Wordtool - Ucz się słówek nowocześnie</title>
 
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.css" rel="stylesheet">
     <link href="./css/pe-icon-7-stroke.css" rel="stylesheet">
     <link href="./css/ct-navbar.css" rel="stylesheet">
     <link href="./css/main.css" rel="stylesheet">
@@ -21,6 +24,12 @@
 </head>
 
 <body>
+<?php
+    if(isset($_COOKIE['activate_info'])){
+        echo "<input type='hidden' class='activate_info' value='".$_COOKIE['activate_info']."' />";
+    }
+?>
+<div class="snackbar"></div>
 <div class="loading">
     <img src="img/Ellipsis.svg" class="gif"/>
 </div>
@@ -50,19 +59,12 @@
                                 <p class="hidden-xxs">Szukaj książki</p>
                             </a>
                         </li>
-                        <li class="login-button">
-                            <a href="#main-page" class="login-btn">
-                                <i class="pe-7s-user">
-                                </i>
-                                <p class="hidden-xxs">Zaloguj się</p>
-                            </a>
-                        </li>
                         <?php
                         if (isset($_SESSION['logged'])){
                             echo '<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="pe-7s-user"></i>
-                        <p>Użytkownik <b class="caret"></b></p>
+                        <p>'.$_SESSION['logged_email'].' <b class="caret"></b></p>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Moje dane</a></li>
@@ -70,9 +72,17 @@
                         <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Moje książki</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>  Regulamin</a></li>
                         <li class="divider"></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Wyloguj</a></li>
+                        <li><a href="#" class="logout"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Wyloguj</a></li>
                     </ul>
                 </li>';
+                        }else {
+                            echo '<li class="login-button">
+                            <a href="#main-page" class="login-btn">
+                                <i class="pe-7s-user">
+                                </i>
+                                <p class="hidden-xxs">Zaloguj się</p>
+                            </a>
+                        </li>';
                         }
                         ?>
                     </ul>
@@ -91,7 +101,25 @@
                             <p>Szukaj książki</p>
                         </a>
                     </li>
-                    <li class="register-button dropdown">
+                    <?php
+                    if (isset($_SESSION['logged'])){
+                        echo '<li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="pe-7s-user"></i>
+                        <p>'.substr($_SESSION['logged_email'], 0, strrpos($_SESSION['logged_email'], "@")).'<b class="caret"></b></p>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./server/user/myInfo.php"><i class="fa fa-id-card" aria-hidden="true"></i><span>Moje dane</span></a></li>
+                        <li><a href="./server/user/learnProgress.php"><i class="fa fa-line-chart" aria-hidden="true"></i><span>Postęp nauki</span></a></li>
+                        <li><a href="./server/user/myBooks.php"><i class="fa fa-book" aria-hidden="true"></i><span>Moje książki</span></a></li>
+                        <li><a href="./server/user/becomeAPro.php"><i class="fa fa-user-plus" aria-hidden="true"></i><span>Zostań PRO</span></a></li>
+                        <li><a href="./server/templates/rules.html"><i class="fa fa-question-circle-o" aria-hidden="true"></i><span>Regulamin</span></a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" class="logout"><i class="fa fa-power-off" aria-hidden="true"></i><span>Wyloguj<span></a></li>
+                    </ul>
+                </li>';
+                    }else {
+                        echo '<li class="register-button dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="pe-7s-add-user"></i>
                             <p>Rejestracja</p>
@@ -101,7 +129,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <span>Zarejestruj się</span>
-                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="register-nav">
+                                        <form class="form" role="form" method="post" action="./server/login/signup.php" id="register-nav">
                                             <div class="form-group">
                                                 <label class="sr-only" for="email_register">Adres email</label>
                                                 <input name="email" id="email_register" class="form-control" placeholder="Adres e-mail" data-validation="email" data-validation-error-msg="Niepoprawny adres e-mail">
@@ -143,16 +171,17 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <span>Zaloguj się</span>
-                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                        <form class="form" role="form" method="post" action="./server/login/login.php" accept-charset="UTF-8" id="login-nav">
                                             <div class="form-group">
                                                 <label class="sr-only" for="email_login">Adres email</label>
                                                 <input name="email" id="email_login" class="form-control" placeholder="Adres e-mail" data-validation="email" data-validation-error-msg="Niepoprawny adres e-mail">
                                             </div>
                                             <div class="form-group">
                                                 <label class="sr-only" for="password_login">Hasło</label>
-                                                <input type="password" name="pass_confirmation" id="password_login" class="form-control pass-log" placeholder="Hasło" data-validation="strength" data-validation-strength="2" data-validation-error-msg="Niepoprawne lub zbyt słabe hasło">
+                                                <input type="password" name="pass_confirmation" id="password_login" class="form-control pass-log" placeholder="Hasło" data-validation="strength" 
+                                                data-validation-strength="2" data-validation-error-msg="Hasło jest niepoprawne">
                                                 <progress class="password-complexity pc-log" value="0"></progress>
-                                                <div class="help-block text-right"><a href="">Zapomniałeś hasła?</a></div>
+                                                <div class="help-block text-right"><a href="./server/templates/forget_password.html">Zapomniałeś hasła?</a></div>
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-primary btn-block">Zaloguj</button>
@@ -170,23 +199,7 @@
                                 </div>
                             </li>
                         </ul>
-                    </li>
-                    <?php
-                    if (isset($_SESSION['logged'])){
-                        echo '<li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="pe-7s-user"></i>
-                        <p>Użytkownik <b class="caret"></b></p>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Moje dane</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Postęp nauki</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Moje książki</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>  Regulamin</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Wyloguj</a></li>
-                    </ul>
-                </li>';
+                    </li>';
                     }
                     ?>
                 </ul>
@@ -354,12 +367,24 @@
         </div>
     </div>
 </footer>
+<section class="after-login">
+    <div class="modal fade" id="afterLoginModal" tabindex="-1" role="dialog" aria-labelledby="afterLoginModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body container-fluid after-login-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-go-to-mail">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <script>window.jQuery || document.write('<script src="./js/jquery.js"><\/script>')</script>
 <script src="./js/bootstrap.min.js"></script>
 <script src="./js/ct-navbar.js"></script>
 <script src="./js/main.js"></script>
 <script src="./js/slick.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 <script>
     $.validate({
         form: '#login-nav, #register-nav',
@@ -367,9 +392,9 @@
         modules : 'location, date, security, file',
         onModulesLoaded : function() {
             console.log('All modules loaded');
-        }
+        },
+        scrollToTopOnError : !true
     });
-
 </script>
 </body>
 </html>
