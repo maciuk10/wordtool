@@ -86,6 +86,10 @@ textarea {
     transform: translate(-50%, -50%);
 }
 
+ul.dropdown-menu > li > a >span {
+    margin-left: 10px;
+}
+
 .logo {
     padding-top: 5px;
 }
@@ -230,6 +234,7 @@ textarea {
     transform: translate(-50%, -50%);
 }
 
+
 .book-container {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -361,4 +366,12 @@ textarea {
     color: rgb(255,255,255);
     text-align: center;
     margin-right: 20px;
+}
+.user-info {
+    background: #fff;
+    padding: 50px 0;
+}
+
+.user-info .well {
+    height: 200px;
 }

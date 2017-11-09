@@ -112,7 +112,7 @@ session_start();
                         <li><a href="./server/user/myInfo.php"><i class="fa fa-id-card" aria-hidden="true"></i><span>Moje dane</span></a></li>
                         <li><a href="./server/user/learnProgress.php"><i class="fa fa-line-chart" aria-hidden="true"></i><span>Postęp nauki</span></a></li>
                         <li><a href="./server/user/myBooks.php"><i class="fa fa-book" aria-hidden="true"></i><span>Moje książki</span></a></li>
-                        <li><a href="./server/user/becomeAPro.php"><i class="fa fa-user-plus" aria-hidden="true"></i><span>Zostań PRO</span></a></li>
+                        <li><a href="./server/user/becomeAPro.php"><i class="fa fa-user-plus" aria-hidden="true"></i><span>KONTO PREMIUM</span></a></li>
                         <li><a href="./server/templates/rules.html"><i class="fa fa-question-circle-o" aria-hidden="true"></i><span>Regulamin</span></a></li>
                         <li class="divider"></li>
                         <li><a href="#" class="logout"><i class="fa fa-power-off" aria-hidden="true"></i><span>Wyloguj<span></a></li>

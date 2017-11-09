@@ -139,20 +139,18 @@ $(document).on('submit', '#login-nav', function(event) {
 $(document).on('submit', '#register-nav', function registerHandler(event) {
     $('#login-dp').fadeOut();
     var data = $(this).serializeArray();
-    console.log(data);
-
     asyncRequest($(this).attr('action'),$(this).attr('method'), {data: JSON.stringify(data)}, true, function () {}, function (msg) {
         try {
             msg = JSON.parse(msg);
             console.log(msg);
         }catch (jsonParseException) {
-            console.log(msg);
+            console.log(jsonParseException.message);
         }
         var afterLoginMsg = "";
         if(msg[0].returnCode.indexOf('S0') !== -1){
             var mailDomain = getMailDomain(data[0].value);
             if (mailDomain !== -1) {
-                afterLoginMsg = msg[0].info+'<p class="text-right">Za chwilę zostaniesz przekierowany do twojego serwera pocztowego</p><p class="text-right"><a class="btn btn-redirect">Przekieruj ręcznie</a></p>';
+                afterLoginMsg = msg[0].info+'<p class="text-right">Za chwilę zostaniesz przekierowany do twojego serwera pocztowego</p><p class="text-right"><a class="btn btn-redirect" href="'+mailDomain+'">Przekieruj ręcznie</a></p>';
                 setTimeout(function() {
                     window.location.replace(mailDomain);
                 }, 10000);
@@ -160,16 +158,16 @@ $(document).on('submit', '#register-nav', function registerHandler(event) {
                 afterLoginMsg = msg[0].info;
             }
             $('.snackbar').html(afterLoginMsg);
-            $('.snackbar').addClass('show');
+            $('.snackbar').addClass('show10');
             setTimeout(function(){
-                $('.snackbar').removeClass('show');
+                $('.snackbar').removeClass('show10');
             },10000);
         }else {
             afterLoginMsg = msg[0].info;
             $('.snackbar').html(afterLoginMsg);
-            $('.snackbar').addClass('show');
+            $('.snackbar').addClass('show10');
             setTimeout(function(){
-                $('.snackbar').removeClass('show');
+                $('.snackbar').removeClass('show10');
             },10000);
         }
     });
@@ -184,8 +182,6 @@ $(document).on('submit', '.contact-form', function(event){
     var lastname = $('.lastname').val();
     var email = $('.email').val();
     var message = $('.msg-textarea').val();
-
-    console.log(message);
 
     if(firstname == ""){
         $('.firstname').addClass('error-form');
@@ -262,7 +258,7 @@ $(document).ready(function () {
         $('.snackbar').addClass('show');
         setTimeout(function(){
             $('.snackbar').removeClass('show');
-        },3000);
+        },5000);
     }
 
     var $slider = $('.books_slider').slick({

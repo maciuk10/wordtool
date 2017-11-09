@@ -1,7 +1,9 @@
 <?php
-    if(!isset($_POST['book_id'])){
-        header('Location: http://'.$_SERVER['SERVER_NAME'].'/wordtool');
-    }
+if(!isset($_POST['book_id'])){
+    header('Location: http://'.$_SERVER['SERVER_NAME'].'/wordtool');
+}else {
+session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,22 +53,107 @@
                         <p>Strona Główna</p>
                     </a>
                 </li>
-                <li class="dropdown">
+                <?php
+                    if (isset($_SESSION['logged'])){
+                        echo '<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="pe-7s-user"></i>
-                        <p>Użytkownik <b class="caret"></b></p>
+                        <p>'.substr($_SESSION['logged_email'], 0, strrpos($_SESSION['logged_email'], "@")).'<b class="caret"></b></p>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Moje dane</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Postęp nauki</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Moje książki</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>  Regulamin</a></li>
+                        <li><a href="./server/user/myInfo.php"><i class="fa fa-id-card" aria-hidden="true"></i><span>Moje dane</span></a></li>
+                        <li><a href="./server/user/learnProgress.php"><i class="fa fa-line-chart" aria-hidden="true"></i><span>Postęp nauki</span></a></li>
+                        <li><a href="./server/user/myBooks.php"><i class="fa fa-book" aria-hidden="true"></i><span>Moje książki</span></a></li>
+                        <li><a href="./server/user/becomeAPro.php"><i class="fa fa-user-plus" aria-hidden="true"></i><span>KONTO PREMIUM</span></a></li>
+                        <li><a href="./server/templates/rules.html"><i class="fa fa-question-circle-o" aria-hidden="true"></i><span>Regulamin</span></a></li>
                         <li class="divider"></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span> WYKUP PREMIUM</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Wyloguj</a></li>
+                        <li><a href="#" class="logout"><i class="fa fa-power-off" aria-hidden="true"></i><span>Wyloguj<span></a></li>
                     </ul>
-                </li>
+                </li>';
+                    }else {
+                        echo '<li class="register-button dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="pe-7s-add-user"></i>
+                            <p>Rejestracja</p>
+                        </a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li class="register">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span>Zarejestruj się</span>
+                                        <form class="form" role="form" method="post" action="./server/login/signup.php" id="register-nav">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="email_register">Adres email</label>
+                                                <input name="email" id="email_register" class="form-control" placeholder="Adres e-mail" data-validation="email" data-validation-error-msg="Niepoprawny adres e-mail">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="password_register">Hasło</label>
+                                                <input type="password" name="pass_confirmation" id="password_register" class="form-control pass-reg" placeholder="Hasło" data-validation="strength" data-validation-strength="2" data-validation-error-msg="Niepoprawne lub zbyt słabe hasło">
+                                                <progress class="password-complexity pc-reg" value="0"></progress>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="password_register_repeat">Powtórz Hasło</label>
+                                                <input type="password" name="pass" id="password_register_repeat" class="form-control" placeholder="Powtórz hasło" data-validation="confirmation" data-validation-error-msg="Hasła się nie zgadzają">
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" data-validation="required" data-validation-error-msg="Nie zaakceptowałeś naszego regulaminu">
+                                                    Zgadzam się z <a href="..." target="_blank">regulaminem Wordtool</a>
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-block">Utwórz konto</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="bottom text-center">
+                                        <b class="text-primary">Stań się częścią Wordtool i ucz się razem z nami</b>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="login-button dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="pe-7s-user"></i>
+                            <p>Logowanie</p>
+                        </a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li class="login">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span>Zaloguj się</span>
+                                        <form class="form" role="form" method="post" action="./server/login/login.php" accept-charset="UTF-8" id="login-nav">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="email_login">Adres email</label>
+                                                <input name="email" id="email_login" class="form-control" placeholder="Adres e-mail" data-validation="email" data-validation-error-msg="Niepoprawny adres e-mail">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="password_login">Hasło</label>
+                                                <input type="password" name="pass_confirmation" id="password_login" class="form-control pass-log" placeholder="Hasło" data-validation="strength" 
+                                                data-validation-strength="2" data-validation-error-msg="Hasło jest niepoprawne">
+                                                <progress class="password-complexity pc-log" value="0"></progress>
+                                                <div class="help-block text-right"><a href="./server/templates/forget_password.html">Zapomniałeś hasła?</a></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-block">Zaloguj</button>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="remember_me"><span>Zapamiętaj mnie</span>
+                                                </label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="bottom text-center">
+                                        <b class="text-primary">Gotowy na kolejną dawkę słownictwa?</b>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>';
+                    }
+                    ?>
             </ul>
             <form class="navbar-form navbar-right navbar-search-form" role="search">
                 <div class="form-group">
